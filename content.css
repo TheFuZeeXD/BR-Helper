@@ -1,0 +1,109 @@
+.button--primary.brh-button {
+    border-radius: 11px;
+    margin-right: 8px;
+    text-decoration: none;
+    border: 3px solid;
+    border-color: rgba(203, 40, 33, 0.5);
+    background-color: #FF4500;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.button--primary.brh-button:hover {
+    background-color: #e03e00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.brh-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    backdrop-filter: blur(3px);
+}
+
+.brh-modal-content {
+    background: #2d2d2d;
+    padding: 25px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #FF4500;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.brh-answer-btn {
+    background: linear-gradient(135deg, #FF4500, #FF6347);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.brh-answer-btn:hover {
+    background: linear-gradient(135deg, #e03e00, #e05a47);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+}
+
+.brh-close-btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.brh-close-btn:hover {
+    background: #555;
+}
+
+@keyframes brhFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.brh-modal {
+    animation: brhFadeIn 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+    .brh-modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .brh-answer-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
