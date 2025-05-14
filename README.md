@@ -1,10 +1,4 @@
-
 # Black Russia Helper
-
-![GitHub stars](https://img.shields.io/github/stars/TheFuZeeXD/BR-Helper?style=for-the-badge&logo=github)
-![GitHub forks](https://img.shields.io/github/forks/TheFuZeeXD/BR-Helper?style=for-the-badge&logo=github)
-![GitHub issues](https://img.shields.io/github/issues/TheFuZeeXD/BR-Helper?style=for-the-badge)
-![License](https://img.shields.io/github/license/TheFuZeeXD/BR-Helper?style=for-the-badge)
 
 **Black Russia Helper** — это расширение для Google Chrome, разработанное как автоответчик на форуме [forum.blackrussia.online/threads/](https://forum.blackrussia.online/threads/). Оно обеспечивает быстрые и удобные шаблоны ответов для пользователей, активно работающих на форуме.
 
