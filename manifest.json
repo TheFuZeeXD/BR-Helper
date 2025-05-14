@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "BR Helper | Скрипт для Форума",
+  "version": "1.0",
+  "description": "Black Russia Helper — это расширение для Google Chrome, разработанное для автоматизации ответов на темы форума forum.blackrussia.online. Оно значительно упрощает взаимодействие с форумом, позволяя автоматически вставлять шаблоны сообщений, ускорять модерацию, обработку заявок и выполнение других рутинных действий.",
+
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://forum.blackrussia.online/threads/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://forum.blackrussia.online/threads/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "icons": {
+    "128": "icon128.png"
+  },
+
+  "action": {
+    "default_popup": "popup/popup.html",
+       "default_icon": {
+      "128": "icon128.png"
+    }
+  }
+}
