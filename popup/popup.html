@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Black Russia Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="popup-container">
+        <h1>Black Russia Helper</h1>
+        <p>Расширение активно на forum.blackrussia.online</p>
+        <form>
+            <input type="text" placeholder="Укажите свой NickName" id="NickName" maxlength="20">
+            <input type="text" placeholder="Укажите свою Должность" id="Rank" maxlength="50">
+        <select id="rules" onchange="RulesChanges()">
+  <option value="admin">Администратор</option>
+  <option value="leader">Лидер Фракции</option>
+  <option value="staff">Старший Состав</option>
+</select>    
+        </form>
+            <a href="https://github.com/TheFuZeeXD/BR-Helper" target="_blank">*подробная инструкция*</a>
+
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" id="extensionToggle" checked>
+                <span class="slider round"></span>
+            </label>
+            <span>Включить расширение</span>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
