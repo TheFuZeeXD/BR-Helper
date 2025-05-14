@@ -18,7 +18,7 @@
    git clone https://github.com/TheFuZeeXD/BR-Helper
    ```
 
-Либо скачайте готовую сборку из [Releases](https://github.com/TheFuZeeXD/BR-Helper/releases)
+Либо скачайте готовую сборку в разделе [Code](https://github.com/TheFuZeeXD/BR-Helper/archive/refs/heads/main.zip)
 
 2. В браузере Chrome откройте:
      ```markdown
