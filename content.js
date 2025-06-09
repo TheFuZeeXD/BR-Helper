@@ -12,10 +12,10 @@
     const TEX_PREFIX = 13; // техническому специалисту
     const GA_PREFIX = 12; // Главному администратору
     const NO_PREFIX = 0;
-    const server = "Yellow";
 
    //       prefix: ACCEPT_PREFIX,
    //       status: false,
+
 
 chrome.storage.local.get(["NickName"], (getNickName) => { 
     chrome.storage.local.get(["Rank"], (getRank) => {    
@@ -61,7 +61,7 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
      dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px 0 rgba(0,0,0,0.14),0 2px 2px 0 rgba(0,0,0,0.12),0 1px 3px 0 rgba(0,0,0,0.2); border: none; border-color: #FF4500',
     },
     {
-      title: 'Нонрп поведение',
+      title: 'nRP поведение',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
@@ -94,7 +94,7 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
         {
-      title: 'NonRP Обман',
+      title: 'nRP Обман',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
@@ -139,17 +139,6 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
     {
-      title: 'RK',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.14[/color]. Запрещен RK (Revenge Kill) — убийство игрока с целью мести, возвращение на место смерти в течение 15-ти минут, а также использование в дальнейшем информации, которая привела Вас к смерти | [Color=Red]Jail 30 минут[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
       title: 'TK',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
@@ -167,17 +156,6 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
         "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.16[/color]. Запрещен SK (Spawn Kill) — убийство или нанесение урона на титульной территории любой фракции / организации, на месте появления игрока, а также на выходе из закрытых интерьеров и около них | [Color=Red]Jail 60 минут / Warn[/color] ([Color=Orange]за два и более убийства[/color]).[/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
-      title: 'PG',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.17[/color]. Запрещен PG (PowerGaming) — присвоение свойств персонажу, не соответствующих реальности, отсутствие страха за свою жизнь | [Color=Red]Jail 30 минут[/CENTER]<br>" +
         '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
@@ -226,28 +204,7 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
-    {
-      title: 'Реклама сторонних ресурсов',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.31[/color]. Запрещено рекламировать на серверах любые проекты, серверы, сайты, сторонние Discord-серверы, YouTube каналы и тому подобное | [Color=Red]Ban 7 дней / PermBan[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
-      title: 'Оск адм',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.54[/color]. Запрещено неуважительное обращение, оскорбление, неадекватное поведение, угрозы в любом проявлении по отношению к администрации. | [Color=Red]Mute 180 минут[/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
+
     {
       title: 'Уяз.правил',
       content:
@@ -259,7 +216,174 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
+     {
+      title: '/do Обман',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.10[/color]. Запрещено в любой форме обманывать в /do, даже если это в дальнейшем негативно скажется на Вашем игровом персонаже | [Color=Red]Jail 30 минут / Warn[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+         {
+      title: 'Помеха Медийным личностям',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.12[/color]. Запрещена помеха в работе блогеров, стримеров (медиа лиц), которые находятся на официальном сотрудничестве с проектом | [Color=Red]Ban 7 дней[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+             {
+      title: 'Обход системы, Баги',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.21[/color]. Запрещено пытаться обходить игровую систему или использовать любые баги сервера | [Color=Red]Ban 15 - 30 дней / PermBan (по согласованию с ГА, ЗГА, руководством тех. специалистов)[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+
+                 {
+      title: 'Сокрытие нарушителей',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.24[/color].  Запрещено скрывать от администрации нарушителей или злоумышленников | [Color=Red]Ban 15 - 30 дней / PermBan + ЧС проекта[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                     {
+      title: 'Скрытие уязвимостей',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.23[/color]. Запрещено скрывать от администрации ошибки игровых систем, а также распространять их игрокам | [Color=Red]Ban 15 - 30 дней / PermBan[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                     {
+      title: 'Вред репутации проекта',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.25[/color]. Запрещены попытки или действия, которые могут навредить репутации проекта | [Color=Red]PermBan + ЧС проекта[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                         {
+      title: 'Вред ресурсам проекта',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.26[/color]. Запрещено намеренно наносить вред ресурсам проекта (игровые серверы, форум, официальные Discord-серверы и так далее) | [Color=Red]PermBan + ЧС проекта[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                             {
+      title: 'Слив Адм. Информации',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.27[/color].  Запрещено распространение информации и материалов, непосредственно связанных с деятельностью администрации проекта, которые могут повлиять на работу и систему администрации  | [Color=Red]PermBan + ЧС проекта[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                                 {
+      title: 'Вред Экономике',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.30[/color].  Запрещено пытаться нанести ущерб экономике сервера | [Color=Red]Ban 15 - 30 дней / PermBan[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                                     {
+      title: 'Ввод в забл, обман адм',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.32[/color].  Запрещено введение в заблуждение, обман администрации на всех ресурсах проекта | [Color=Red]Ban 7 - 15 дней[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+         {
+      title: 'Слив личной информации',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.38[/color].  Запрещено распространять личную информацию игроков и их родственников | [Color=Red]Ban 15 - 30 дней / PermBan + ЧС проекта[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+             {
+      title: 'Деструктивные Действия',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.40[/color].  Запрещены совершенно любые деструктивные действия по отношению к проекту: неконструктивная критика, призывы покинуть проект, попытки нарушить развитие проекта или любые другие действия, способные привести к помехам в игровом процессе | [Color=Red]Mute 300 минут / Ban 30 дней (Ban выдается по согласованию с главным администратором)[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                     {
+      title: 'Торги Бесплатным',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.42[/color]. Запрещена продажа / обмен / покупка поощрительной составляющей от лица проекта, будь то бонус-код, либо промокод, который выдается безвозмездно игрокам в целях промоакций | [Color=Red]Mute 120 минут[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                 {
+      title: 'Торги Бесплатным',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.43[/color]. Запрещена продажа / обмен / покупка поощрительной составляющей от лица проекта, будь то бонус-код, либо промокод, который выдается безвозмездно игрокам в целях промоакций | [Color=Red]Mute 120 минут[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
     {
+      title: 'Невозврат Долга',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.57[/color]. Запрещается брать в долг игровые ценности и не возвращать их.  | [Color=Red]Ban 30 дней / permban[/color][/CENTER]<br>" +
+           "[Color=Orange]Примечание[/color]: займ может быть осуществлен только через зачисление игровых ценностей на банковский счет, максимальный срок займа 30 календарных дней, если займ не был возвращен, аккаунт должника блокируется; при невозврате игровых ценностей общей стоимостью менее 5 миллионов включительно аккаунт будет заблокирован на 30 дней, если более 5 миллионов, аккаунт будет заблокирован навсегда; жалоба на игрока, который занял игровые ценности и не вернул в срок, подлежит рассмотрению только при наличии подтверждения суммы и условий займа в игровом процессе, меры в отношении должника могут быть приняты только при наличии жалобы и доказательств. Жалоба на должника подается в течение 10 дней после истечения срока займа. Договоры вне игры не будут считаться доказательствами.[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+        {
       title: 'Уход от наказания',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
@@ -283,39 +407,7 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
-    {
-      title: 'IC и OCC угрозы',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.35[/color]. На игровых серверах запрещено устраивать IC и OOC конфликты на почве разногласия о национальности и / или религии совершенно в любом формате | [Color=Red]Mute 120 минут / Ban 7 дней[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
-      title: 'IC конфликты в OOC',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.36[/color]. Запрещено переносить конфликты из IC в OOC и наоборот | [Color=Red]Warn[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-     {
-      title: 'Угрозы OOC',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по пункту правил: [Color=Red]2.37[/color]. Запрещены OOC угрозы, в том числе и завуалированные | [Color=Red]Mute 120 минут / Ban 7 дней [/color]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
+ 
     {
       title: 'Злоуп наказаниями',
       content:
@@ -327,14 +419,14 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
-    {
-      title: 'Оск проекта',
+            {
+      title: 'Завышение ставки Казино',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.40[/color]. Запрещены совершенно любые деструктивные действия по отношению к проекту: неконструктивная критика, призывы покинуть проект, попытки нарушить развитие проекта или любые другие действия, способные привести к помехам в игровом процессе | [Color=Red]Mute 300 минут / Ban 30 дней[/color] ([Color=Cyan]Ban выдается по согласованию с главным администратором[/color])[/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.03[/color]. Крупье запрещено делать ставку выше, чем просят игроки | [Color=Red]Увольнение с должности[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
@@ -345,17 +437,6 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` + 
         "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.43[/color]. Запрещена продажа / обмен / покупка поощрительной составляющей от лица проекта, будь то бонус-код, либо промокод, который выдается безвозмездно игрокам в целях промоакций | [Color=Red]Mute 120 минут[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
-      title: 'ЕПП Фура - инк',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.47[/color]. Запрещено ездить по полям на грузовом транспорте, инкассаторских машинах (работа дальнобойщика, инкассатора) | [Color=Red]Jail 60 минут[/color][/CENTER]<br>" +
         '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
@@ -402,17 +483,6 @@ chrome.storage.local.get(["NickName"], (getNickName) => {
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
         "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.53[/color]. Запрещено устанавливать названия для внутриигровых ценностей с использованием нецензурной лексики, оскорблений, слов политической или религиозной наклонности | [Color=Red]Ban 1 день / При повторном нарушении обнуление бизнеса[/color][/CENTER]<br>" +
         '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
-      title: 'Неув обр. к адм',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.54[/color]. Запрещено неуважительное обращение, оскорбление, неадекватное поведение, угрозы в любом их проявлении по отношению к администрации | [Color=Red]Mute 180 минут[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color]<br>' +
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
@@ -500,6 +570,72 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
+       {
+      title: 'IC и OCC угрозы',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.35[/color]. На игровых серверах запрещено устраивать IC и OOC конфликты на почве разногласия о национальности и / или религии совершенно в любом формате | [Color=Red]Mute 120 минут / Ban 7 дней[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+    {
+      title: 'IC конфликты в OOC',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.36[/color]. Запрещено переносить конфликты из IC в OOC и наоборот | [Color=Red]Warn[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+     {
+      title: 'Угрозы OOC',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по пункту правил: [Color=Red]2.37[/color]. Запрещены OOC угрозы, в том числе и завуалированные | [Color=Red]Mute 120 минут / Ban 7 дней [/color]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+         {
+      title: 'Слив в Глоб. Чате',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по пункту правил: [Color=Red]3.08[/color]. Запрещены любые формы «слива» посредством использования глобальных чатов | [Color=Red]PermBan[/color]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+         {
+      title: 'VoiceChange',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по пункту правил: [Color=Red]3.19[/color]. Запрещено использование любого софта для изменения голоса | [Color=Red]Mute 60 минут[/color]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+        {
+      title: 'Оск проекта',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.40[/color]. Запрещены совершенно любые деструктивные действия по отношению к проекту: неконструктивная критика, призывы покинуть проект, попытки нарушить развитие проекта или любые другие действия, способные привести к помехам в игровом процессе | [Color=Red]Mute 300 минут / Ban 30 дней[/color] ([Color=Cyan]Ban выдается по согласованию с главным администратором[/color])[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
     {
       title: 'Оск/Упом родни',
       content:
@@ -533,36 +669,36 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
-    {
-      title: 'Оскорбление',
+     {
+      title: 'Реклама сторонних ресурсов',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]3.07[/color]. Запрещены совершенно любые оскорбления или действия, порочащие честь и достоинства, несущие в себе подтекст сексуального характера вне зависимости от чата | [Color=Red]Mute 30 минут[/color][/CENTER]<br>" +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.31[/color]. Запрещено рекламировать на серверах любые проекты, серверы, сайты, сторонние Discord-серверы, YouTube каналы и тому подобное | [Color=Red]Ban 7 дней / PermBan[/color][/CENTER]<br>" +
         '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
     {
-        title: 'Редактирование в л/ц',
-        content:
+      title: 'Оск адм',
+      content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.04[/color]. Запрещено редактировать поданные объявления в личных целях заменяя текст обьявления на несоответствующий отправленному игроком | [Color=Red]Ban 7 дней + Чс Организации[/color][/CENTER]<br>" +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.54[/color]. Запрещено неуважительное обращение, оскорбление, неадекватное поведение, угрозы в любом проявлении по отношению к администрации. | [Color=Red]Mute 180 минут[/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+        {
+      title: 'Неув обр. к адм',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.54[/color]. Запрещено неуважительное обращение, оскорбление, неадекватное поведение, угрозы в любом их проявлении по отношению к администрации | [Color=Red]Mute 180 минут[/color][/CENTER]<br>" +
         '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color]<br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
-      title: 'Слив СМИ',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]3.08[/color]. Запрещены любые формы «слива» посредством использования глобальных чатов | [Color=Red]PermBan[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
@@ -702,7 +838,73 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
      title: 'Положение об игровых аккаунтах',
 dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px 0 rgba(0,0,0,0.14),0 2px 2px 0 rgba(0,0,0,0.12),0 1px 3px 0 rgba(0,0,0,0.2); border: none; border-color: #FF4500',
     },
+        {
+      title: 'Продажа Аккаунта/Имущества',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.42[/color]. Попытка продажи любого игрового имущества или игрового аккаунта за реальные деньги | [Color=Red]PermBan[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
     {
+      title: 'Передача Аккаунта',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.03[/color]. Передача своего личного игрового аккаунта третьим лицам | [Color=Red]PermBan[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+        {
+      title: 'Трансфер',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.05[/color]. Запрещена передача либо трансфер игровых ценностей, между игровыми аккаунтами либо серверами, а также в целях удержания имущества | [Color=Red]Ban 15 - 30 дней / PermBan[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+            {
+      title: 'Оскорбительный NickName',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.09[/color]. Запрещено использовать никнейм, содержащий в себе матерные слова или оскорбления (в том числе завуалированные), а также слова политической или религиозной направленности | [Color=Red]Устное замечание + смена игрового никнейма / PermBan[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+            {
+      title: 'Есть бизнес на Основа и Твинк',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.11[/color]. Владеть бизнесами разрешается с одного основного аккаунта | [Color=Red]Обнуление твинк аккаунта[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                {
+      title: 'Плагиат Промокода Блогера',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.15[/color]. Запрещено создавать промокод, идентичный промокоду блогера проекта, а также любой промокод, который не относится к рефералу и имеет возможность пассивного заработка | [Color=Red]PermBan аккаунта или Обнуление Имущества, заработанного с помощью промокода, а также самого промокода.[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+        {
       title: 'Мульти-аккаунт [3+]',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
@@ -722,6 +924,28 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
         "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.10[/color]. Запрещено создавать никнейм, повторяющий или похожий на существующие никнеймы игроков или администраторов по их написанию | [Color=Red]Устное замечание + смена игрового никнейма / PermBan[/color].[/CENTER]<br>" +
         '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+            {
+      title: 'Неустока СТО, Казино',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]3.01[/color]. Запрещено продавать и передавать казино / СТО третьим лицам, продавать бизнес в государство и выкупать обратно, любые другие виды и способы сохранения бизнеса у себя или выставления его на аукцион | [Color=Red]PermBan[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+            {
+      title: 'Налоги Казино/Клуб',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]2.02[/color]. Владельцу и менеджерам казино и ночного клуба запрещено взимать у работников налоги в виде денежных средств за должность в казино | [Color=Red]Ban 3 - 5 дней[/color].<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' + 
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
@@ -850,6 +1074,61 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
+           {
+      title: 'Казино/БУ в форме ГОСС',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]1.13[/color].  Запрещено находиться в форме внутри казино, участвовать в битве за контейнеры, участвовать в захвате семейного контейнера, находится на Б/У рынке с целью покупки / продажи авто, а также устраиваться на сторонние работы в форме фракции | [Color=Red]Jail 30 минут[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+            {
+      title: 'Одиночный патруль',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]1.11[/color].  Всем силовым структурам запрещен одиночный патруль или конвоирование, минимум 2 сотрудника | [Color=Red]Jail 30 минут[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+                {
+      title: 'Помеха БВ от ГОСС',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]1.14[/color].  Сотрудникам правоохранительных органов запрещается задерживать состав участников войны за бизнес за 10 минут непосредственно до начала самого бизвара | [Color=Red]Jail 30 минут[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+     {
+        title: 'Редактирование в л/ц',
+        content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]4.04[/color]. Запрещено редактировать поданные объявления в личных целях заменяя текст обьявления на несоответствующий отправленному игроком | [Color=Red]Ban 7 дней + Чс Организации[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color]<br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+    {
+      title: 'Слив СМИ',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по данному пункту правил: [Color=Red]3.08[/color]. Запрещены любые формы «слива» посредством использования глобальных чатов | [Color=Red]PermBan[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/CENTER][/color] <br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
     {
       title: 'НПРО [Объявления]',
       content:
@@ -885,17 +1164,6 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
     {
-      title: 'ДМ от УМВД',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по пунтку правил: [Color=Red]6.01[/color]. Запрещено наносить урон игрокам без Role Play причины на территории УМВД | [Color=Red]Jail 60 минут / Warn[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-          },
-    {
       title: 'Розыск без причины [УМВД]',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
@@ -907,23 +1175,12 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
     {
-      title: 'Нонрп поведение[УМВД]',
+      title: 'nRP поведение [УМВД/ГИБДД/ФСБ]',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
         "[CENTER]Нарушитель будет наказан по пунтку правил: [Color=Red]6.03[/color]. Запрещено nRP поведение | [Color=Red]Warn[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
-      title: 'ДМ от ГИБДД',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по пунтку правил: [Color=Red]7.01[/color]. Запрещено наносить урон игрокам без Role Play причины на территории ГИБДД | [Color=Red]Jail 60 минут / Warn[/color][/CENTER]<br>" +
         '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' +
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
@@ -973,17 +1230,6 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
     {
-      title: 'ДМ от ФСБ',
-      content:
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
-        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
-        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
-        "[CENTER]Нарушитель будет наказан по пунтку правил: [Color=Red]8.01[/color]. Запрещено наносить урон игрокам без Role Play причины на территории ФСБ | [Color=Red]DM / Jail 60 минут / Warn[/color][/CENTER]<br>" +
-        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' +
-        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
-        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
-    },
-    {
       title: 'Розыск без причины [ФСБ]',
       content:
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
@@ -1021,6 +1267,39 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
       prefix: ACCEPT_PREFIX,
       status: false,
+    },
+       {
+      title: 'Использование Т/С во время БВ',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по пунтку правил: [Color=Red]2.04[/color]. Запрещено после начала бизвара использовать транспорт на территории его ведения | [Color=Red]Jail 30 минут[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+           {
+      title: 'Маска/Бронь во время БВ',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по пунтку правил: [Color=Red]2.05[/color]. Запрещено использовать маски, бронежилеты | [Color=Red]Jail 30 минут[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+       {
+      title: 'Крыша во время БВ',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу жалобу, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]Нарушитель будет наказан по пунтку правил: [Color=Red]2.08[/color]. Запрещено находиться на крышах во время бизвара | [Color=Red]Jail 30 минут[/color][/CENTER]<br>" +
+        '[Color=Lime][CENTER]Одобрено, закрыто.[/I][/CENTER][/color][/FONT]<br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
     },
     {
       title: 'Нападение на ВЧ через стену',
@@ -1455,6 +1734,17 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
         `[CENTER]Я ${rang} ${nickname} рассмотрел вашу РП Биографию, и готов вынести вердикт:[/CENTER]<br>` +
         "[CENTER]У вас уже имеется RolePlay биография на рассмотрении, работайте там.[/CENTER]<br>" +
+        '[Color=Red][CENTER] Отказано, закрыто.[/I][CENTER][/color][/FONT]<br>' +
+        "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
+    },
+    {
+      title: 'Есть биография',
+      content:
+        '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]<br>' +
+        '[Color=rgb(222, 143, 255)][FONT=Georgia][CENTER][I]{{ greeting }}, уважаемый {{ user.mention }}.[/color][/CENTER]<br>' +
+        `[CENTER]Я ${rang} ${nickname} рассмотрел вашу РП Биографию, и готов вынести вердикт:[/CENTER]<br>` +
+        "[CENTER]У вас уже имеется RolePlay биография.[/CENTER]<br>" +
         '[Color=Red][CENTER] Отказано, закрыто.[/I][CENTER][/color][/FONT]<br>' +
         "[CENTER] Приятной игры на [Color=Red]Black Russia [/I][/CENTER][/color][/FONT]<br>" +
         '[CENTER][url=https://postimages.org/][img]https://i.postimg.cc/mrhcH5vR/1621526767066.png[/img][/url][/CENTER]',
@@ -2254,10 +2544,10 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         return button;
     }
 
-    function showAnswersModal() {
+function showAnswersModal() {
         const modal = document.createElement('div');
         modal.className = 'brh-modal';
-        modal.style.cssText = `
+      modal.style.cssText = `
             position: fixed;
             top: 0;
             text-decoration:none;
@@ -2275,21 +2565,118 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
         modalContent.className = 'brh-modal-content';
         modalContent.style.cssText = `
             background: #1e1e1e;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             max-width: 80%;
             max-height: 80%;
             overflow-y: auto;
         `;
 
-        buttons.forEach((btn, i) => {
-            const button = createButton(btn.title, `brh-answer-${i}`, btn.dpstyle || 'margin: 10px;');
-            button.addEventListener('click', () => {
-                pasteContent(i);
-                document.body.removeChild(modal);
-            });
-            modalContent.appendChild(button);
+         const searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.placeholder = 'Поиск по ответам...';
+        searchInput.style.cssText = `
+           width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #444;
+        background: #2d2d2d;
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 10px;
+        `;
+        modalContent.appendChild(searchInput);
+
+
+    // Контейнер для кнопок
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.id = 'brh-buttons-container';
+    modalContent.appendChild(buttonsContainer);
+
+    // Функция для создания кнопки с сохранением оригинального индекса
+    function createButtonWithIndex(btn, originalIndex) {
+        const button = createButton(btn.title, `brh-answer-${originalIndex}`, btn.dpstyle || 'margin: 10px 0px; width: 98%;');
+        button.addEventListener('click', () => {
+            pasteContent(originalIndex); // Используем оригинальный индекс
+            document.body.removeChild(modal);
         });
+        return button;
+    }
+
+    // Функция для обновления видимых кнопок
+    function updateVisibleButtons() {
+        buttonsContainer.innerHTML = ''; // Очищаем контейнер
+        
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        buttons.forEach((btn, originalIndex) => {
+            if (!searchTerm || btn.title.toLowerCase().includes(searchTerm)) {
+                const button = createButtonWithIndex(btn, originalIndex);
+                buttonsContainer.appendChild(button);
+            }
+        });
+    }
+
+    // Инициализация кнопок
+    updateVisibleButtons();
+    
+    // Слушатель для поиска
+    searchInput.addEventListener('input', updateVisibleButtons);
+
+    // Кнопка закрытия
+    const closeButton = createButton('Закрыть', 'brh-close', 'margin-top: 10px; width: 98%;');
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+    modalContent.appendChild(closeButton);
+
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+}
+  
+         /*   const buttonsContainer = document.createElement('div');
+    buttonsContainer.id = 'brh-buttons-container';
+    modalContent.appendChild(buttonsContainer);
+
+
+  const allButtons = buttons.map((btn, i) => {
+        const button = createButton(btn.title, `brh-answer-${i}`, btn.dpstyle || 'margin: 10px 0px; width: 100%;');
+        button.dataset.originalIndex = i;
+        button.addEventListener('click', () => {
+            pasteContent(i);
+            document.body.removeChild(modal);
+        });
+        return button;
+    });
+
+    // Функция для обновления видимых кнопок
+    function updateVisibleButtons() {
+        // Очищаем контейнер перед добавлением новых кнопок
+        buttonsContainer.innerHTML = '';
+        
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        // Если строка поиска пустая - показываем все кнопки
+        if (!searchTerm) {
+            allButtons.forEach(button => {
+                buttonsContainer.appendChild(button.cloneNode(true));
+            });
+            return;
+        }
+        
+        // Фильтруем и добавляем только подходящие кнопки
+        allButtons.forEach(button => {
+            if (button.textContent.toLowerCase().includes(searchTerm)) {
+                buttonsContainer.appendChild(button.cloneNode(true));
+            }
+        });
+    }
+
+    // Инициализация кнопок
+    updateVisibleButtons();
+    
+    // Слушатель для поиска
+  searchInput.addEventListener('input', updateVisibleButtons);
 
         const closeButton = createButton('Закрыть', 'brh-close', 'margin-top: 20px;');
         closeButton.addEventListener('click', () => {
@@ -2299,7 +2686,7 @@ dpstyle: 'oswald: 3px;     color: #fff; background: #FF4500; box-shadow: 0 0 2px
 
         modal.appendChild(modalContent);
         document.body.appendChild(modal);
-    }
+    }*/
 
     function pasteContent(id) {
         const data = getThreadData();
