@@ -4,13 +4,16 @@
     text-decoration: none;
     border: 3px solid;
     border-color: rgba(203, 40, 33, 0.5);
-    background-color: #FF4500;
     color: white;
     font-weight: bold;
     padding: 8px 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    
+}
+
+#brh-buttons-container {
+    margin:0;
+    padding:0;
 }
 
 .button--primary.brh-button:hover {
@@ -18,7 +21,6 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 .brh-modal {
     position: fixed;
@@ -73,7 +75,7 @@
 }
 
 .brh-close-btn {
-    background: #444;
+    background: #796565;
     color: white;
     border: none;
     padding: 10px 15px;
