@@ -2588,24 +2588,21 @@ function showAnswersModal() {
         modalContent.appendChild(searchInput);
 
 
-    // Контейнер для кнопок
     const buttonsContainer = document.createElement('div');
     buttonsContainer.id = 'brh-buttons-container';
     modalContent.appendChild(buttonsContainer);
 
-    // Функция для создания кнопки с сохранением оригинального индекса
     function createButtonWithIndex(btn, originalIndex) {
         const button = createButton(btn.title, `brh-answer-${originalIndex}`, btn.dpstyle || 'margin: 10px 0px; width: 98%;');
         button.addEventListener('click', () => {
-            pasteContent(originalIndex); // Используем оригинальный индекс
+            pasteContent(originalIndex); 
             document.body.removeChild(modal);
         });
         return button;
     }
 
-    // Функция для обновления видимых кнопок
     function updateVisibleButtons() {
-        buttonsContainer.innerHTML = ''; // Очищаем контейнер
+        buttonsContainer.innerHTML = ''; 
         
         const searchTerm = searchInput.value.toLowerCase();
         
@@ -2617,13 +2614,10 @@ function showAnswersModal() {
         });
     }
 
-    // Инициализация кнопок
     updateVisibleButtons();
     
-    // Слушатель для поиска
     searchInput.addEventListener('input', updateVisibleButtons);
 
-    // Кнопка закрытия
     const closeButton = createButton('Закрыть', 'brh-close', 'margin-top: 10px; width: 98%;');
     closeButton.addEventListener('click', () => {
         document.body.removeChild(modal);
@@ -2634,60 +2628,6 @@ function showAnswersModal() {
     document.body.appendChild(modal);
 }
   
-         /*   const buttonsContainer = document.createElement('div');
-    buttonsContainer.id = 'brh-buttons-container';
-    modalContent.appendChild(buttonsContainer);
-
-
-  const allButtons = buttons.map((btn, i) => {
-        const button = createButton(btn.title, `brh-answer-${i}`, btn.dpstyle || 'margin: 10px 0px; width: 100%;');
-        button.dataset.originalIndex = i;
-        button.addEventListener('click', () => {
-            pasteContent(i);
-            document.body.removeChild(modal);
-        });
-        return button;
-    });
-
-    // Функция для обновления видимых кнопок
-    function updateVisibleButtons() {
-        // Очищаем контейнер перед добавлением новых кнопок
-        buttonsContainer.innerHTML = '';
-        
-        const searchTerm = searchInput.value.toLowerCase();
-        
-        // Если строка поиска пустая - показываем все кнопки
-        if (!searchTerm) {
-            allButtons.forEach(button => {
-                buttonsContainer.appendChild(button.cloneNode(true));
-            });
-            return;
-        }
-        
-        // Фильтруем и добавляем только подходящие кнопки
-        allButtons.forEach(button => {
-            if (button.textContent.toLowerCase().includes(searchTerm)) {
-                buttonsContainer.appendChild(button.cloneNode(true));
-            }
-        });
-    }
-
-    // Инициализация кнопок
-    updateVisibleButtons();
-    
-    // Слушатель для поиска
-  searchInput.addEventListener('input', updateVisibleButtons);
-
-        const closeButton = createButton('Закрыть', 'brh-close', 'margin-top: 20px;');
-        closeButton.addEventListener('click', () => {
-            document.body.removeChild(modal);
-        });
-        modalContent.appendChild(closeButton);
-
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-    }*/
-
     function pasteContent(id) {
         const data = getThreadData();
         const template = compileTemplate(buttons[id].content);
