@@ -1,18 +1,49 @@
+::selection {
+    background-color: #49494900;
+    color:#dd6300;
+
+    text-shadow: 1px 1px 3px black;
+}
+
 body {
-         width: 200px;
-    padding: 10px;
+                    background-color: #838383;
+             width: 300px;
+ padding: 10px;
     font-family: Arial, sans-serif;
     font-weight: 555;
-    background-color: #cecece;
+
 }
 
 .popup-container {
+
     text-align: center;
+
+}
+#Screen-Chrome-Exst_house {
+    display: block;
 }
 
+#Screen-Chrome-Exst_settings {
+    display: none;
+}
+#Screen-Chrome-Exst_credits {
+    display: none;
+}
+
+p {
+
+    font-size: 13px;
+}
 a {
 text-decoration: none;
     color: black;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+a:hover {
+text-decoration: none;
+    color: rgb(51, 51, 51);
     cursor: pointer;
     font-size: 14px;
 }
@@ -20,9 +51,62 @@ h1 {
 
     user-select: none;
     font-size: 16px;
-    color: #333;
+    color: #c7c7c7;
 }
 
+h2 {
+    font-family: sans-serif;
+    font-weight: 600;
+}
+h3 {
+    font-size: 16px;
+  font-family: monospace;  
+}
+
+h4 {
+    font-size: 15px;
+    margin:5px 0px;
+}
+#Screen-Chrome-Exst_credits a {
+text-decoration: underline;
+color: #ffc393;
+font-family: cursive;
+font-size: 16px;
+
+}
+
+#Screen-Chrome-Exst_credits a:hover {
+color: rgb(214, 182, 0);
+}
+
+
+footer {
+    user-select: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 15px 0px 0px;
+}
+
+footer button {
+    cursor: pointer;
+    width: 90%;
+    margin: 0px 2px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+
+footer button:hover {
+    background-color: #acacac;
+    box-shadow: 1px 1px 9px;
+}
+
+footer button:active {
+    background-color: #fc770b;
+    box-shadow: 1px 1px 9px #fc770b;
+}
 .switch-container {
     display: flex;
     align-items: center;
@@ -92,13 +176,13 @@ form input {
    color: white;
    padding: 3px;
    border-radius: 7px;
-   background-color: #a4a2a2;
+   background-color: #494949;
 }
 
 form select {
     color: white;
     margin: 6px;
-    background-color: #8e8d8d;
+    background-color: #494949;
     border: none;
     padding: 3px 14px;
     border-radius:10px;
