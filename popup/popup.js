@@ -16,6 +16,33 @@ const username = document.querySelector('#NickName');
 const rank = document.querySelector("#Rank");
 const myrules = document.querySelector("#rules");
 const check = document.querySelector("#extensionToggle");
+const MainBody = document.querySelector("#TitleText");
+
+const HouseMember = document.querySelector("#Screen-Chrome-Exst_house");
+
+const SettingMember = document.querySelector("#Screen-Chrome-Exst_settings");
+
+const CreditMember = document.querySelector("#Screen-Chrome-Exst_credits");
+document.getElementById('Button1House').addEventListener('click', () => {
+
+    document.querySelector("#Screen-Chrome-Exst_house").style.display = "block";
+document.querySelector("#Screen-Chrome-Exst_settings").style.display = "none";
+document.querySelector("#Screen-Chrome-Exst_credits").style.display = "none";
+});
+
+document.getElementById('Button2Settings').addEventListener('click', () => {
+
+    document.querySelector("#Screen-Chrome-Exst_house").style.display = "none";
+document.querySelector("#Screen-Chrome-Exst_settings").style.display = "block";
+document.querySelector("#Screen-Chrome-Exst_credits").style.display = "none";
+});
+
+document.getElementById('Button3Credits').addEventListener('click', () => {
+
+    document.querySelector("#Screen-Chrome-Exst_house").style.display = "none";
+document.querySelector("#Screen-Chrome-Exst_settings").style.display = "none";
+document.querySelector("#Screen-Chrome-Exst_credits").style.display = "block";
+});
 
 if (localStorage.getItem("Rules") == undefined) {
    localStorage.setItem("Rules", "admin");
