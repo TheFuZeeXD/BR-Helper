@@ -1,14 +1,14 @@
 ::selection {
     background-color: #49494900;
-    color:#dd6300;
+    color: #dd6300;
 
     text-shadow: 1px 1px 3px black;
 }
 
 body {
-                    background-color: #838383;
-             width: 300px;
- padding: 10px;
+    background-color: #838383;
+    width: 300px;
+    padding: 10px;
     font-family: Arial, sans-serif;
     font-weight: 555;
 
@@ -19,6 +19,7 @@ body {
     text-align: center;
 
 }
+
 #Screen-Chrome-Exst_house {
     display: block;
 }
@@ -26,6 +27,7 @@ body {
 #Screen-Chrome-Exst_settings {
     display: none;
 }
+
 #Screen-Chrome-Exst_credits {
     display: none;
 }
@@ -34,19 +36,22 @@ p {
 
     font-size: 13px;
 }
+
 a {
-text-decoration: none;
+    text-decoration: none;
     color: black;
     cursor: pointer;
     font-size: 14px;
     transition: color 0.2s;
 }
+
 a:hover {
-text-decoration: none;
+    text-decoration: none;
     color: rgb(51, 51, 51);
     cursor: pointer;
     font-size: 14px;
 }
+
 h1 {
 
     user-select: none;
@@ -58,25 +63,27 @@ h2 {
     font-family: sans-serif;
     font-weight: 600;
 }
+
 h3 {
     font-size: 16px;
-  font-family: monospace;  
+    font-family: monospace;
 }
 
 h4 {
     font-size: 15px;
-    margin:5px 0px;
+    margin: 5px 0px;
 }
+
 #Screen-Chrome-Exst_credits a {
-text-decoration: underline;
-color: #ffc393;
-font-family: cursive;
-font-size: 16px;
+    text-decoration: underline;
+    color: #ffc393;
+    font-family: cursive;
+    font-size: 16px;
 
 }
 
 #Screen-Chrome-Exst_credits a:hover {
-color: rgb(214, 182, 0);
+    color: rgb(214, 182, 0);
 }
 
 
@@ -107,6 +114,7 @@ footer button:active {
     background-color: #fc770b;
     box-shadow: 1px 1px 9px #fc770b;
 }
+
 .switch-container {
     display: flex;
     align-items: center;
@@ -152,31 +160,32 @@ footer button:active {
     border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #FF4500;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(26px);
 }
 
 form input::placeholder {
-    color:white;
+    color: white;
     text-align: center;
     transition: margin-left 0.2s;
 }
 
 form input:focus::placeholder {
-    margin-left:200px;
+    margin-left: 200px;
 }
+
 form input {
     text-align: center;
-    border:none;
-   margin:3px;
-   color: white;
-   padding: 3px;
-   border-radius: 7px;
-   background-color: #494949;
+    border: none;
+    margin: 3px;
+    color: white;
+    padding: 3px;
+    border-radius: 7px;
+    background-color: #494949;
 }
 
 form select {
@@ -185,7 +194,7 @@ form select {
     background-color: #494949;
     border: none;
     padding: 3px 14px;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 form input:focus {
@@ -196,13 +205,23 @@ form input:focus {
 form button {
     user-select: none;
     cursor: pointer;
-    border:none;
+    border: none;
     margin-top: 3px;
     padding: 3px 17px;
-    border-radius:10px;
+    border-radius: 10px;
     background-color: #ccc;
 }
 
 form button:hover {
-        background-color: #a5a5a5;
+    background-color: #a5a5a5;
+}
+
+#backgroundURL {
+    margin: auto;
+    display: none;
+    margin-top: 15px;
+}
+
+#backgroundURL.backgroundURL-Checked {
+    display: block;
 }
