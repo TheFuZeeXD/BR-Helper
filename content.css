@@ -12,8 +12,8 @@
 }
 
 #brh-buttons-container {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 .button--primary.brh-button:hover {
@@ -90,8 +90,13 @@
 }
 
 @keyframes brhFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .brh-modal {
@@ -103,9 +108,109 @@
         width: 95%;
         padding: 15px;
     }
-    
+
     .brh-answer-btn {
         padding: 10px 15px;
         font-size: 13px;
     }
+}
+
+.p-pageWrapper {
+    --BageURL: "";
+    background-image: var(--BageURL);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.p-nav {
+    opacity: 0.95;
+}
+
+.block-container {
+    opacity: 0.95;
+}
+
+.p-footer {
+    opacity: 0.95;
+}
+
+.button.button--cta,
+a.button.button--cta {
+    opacity: 0.95;
+}
+
+.buttonGroup {
+    opacity: 0.95;
+}
+
+.button--scroll ripple-JsOnly button {
+    opacity: 0.95;
+}
+
+.button--scroll ripple-JsOnly button {
+    opacity: 0.95;
+}
+
+.p-header {
+    opacity: 0.60;
+}
+
+.p-nav-inner {
+    opacity: 0.60;
+}
+
+.p-sectionLinks {
+    opacity: 0.60;
+}
+
+.pageNav-main {
+    opacity: 0.95;
+}
+
+.pageNav-jump {
+    opacity: 0.95;
+}
+
+.tabPanes {
+    opacity: 0.95;
+}
+
+.menu-content {
+    opacity: 0.95;
+}
+
+.overlay {
+    opacity: 0.95;
+}
+
+span[itemprop="name"] {
+    text-shadow: 1px 0 1px #22242b,
+        0 1px 1px #22242b,
+        -1px 0 1px #22242b,
+        0 -1px 1px #22242b;
+}
+
+span[class="hScroller-scroll is-calculated"] {
+    background-color: #22242b;
+    opacity: 0.95;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.p-body-header .p-title-value {
+    text-shadow: 1px 0 1px #22242b,
+        0 1px 1px #22242b,
+        -1px 0 1px #22242b,
+        0 -1px 1px #22242b;
+}
+
+.block-minorHeader {
+    background-color: #22242b;
+    opacity: 0.95;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
