@@ -7,53 +7,82 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="light">
     <div class="popup-container">
-        <h1 id="TitleText">Black Russia Helper</h1>
-        <div id="Screen-Chrome-Exst_house">
-            <p>Расширение для Браузеров, разработанное для автоматизации ответов на темы форума forum.blackrussia.online
-            </p>
-            <a href="https://github.com/TheFuZeeXD/BR-Helper" target="_blank">*подробная инструкция*</a>
-            <div class="switch-container">
-                <label class="switch">
-                    <input type="checkbox" id="extensionToggle" checked>
-                    <span class="slider round"></span>
-                </label>
-                <span style="user-select: none;">Включить расширение</span>
+        <header class="popup-header">
+            <img src="/icon128.png">
+            <div class="popup-header_container">
+                <button id="popup-header-button_managment" class="activePage">🕹️</button>
+                <button id="popup-header-button_settings">🛠️</button>
+                <button id="popup-header-button_customization">🎀</button>
+                <button id="popup-header-button_credits">🏷️</button>
             </div>
-        </div>
-        <div id="Screen-Chrome-Exst_settings">
-            <h4>Настройки Автоответа</h4>
-            <form>
-                <input type="text" placeholder="Укажите свой NickName" id="NickName" maxlength="20">
-                <input type="text" placeholder="Укажите свою Должность" id="Rank" maxlength="50">
-                <select id="rules" onchange="RulesChanges()">
-                    <option value="admin">Администратор</option>
-                    <option value="leader">Лидер Фракции</option>
-                    <option value="staff">Старший Состав</option>
-                </select>
+        </header>
+
+        <main class="popup-main">
+
+            <h1 id="TitleText">Black Russia Helper</h1>
+            <div id="Screen-Chrome-Exst_house">
+                <p>Расширение для Браузеров, разработанное для автоматизации ответов на темы форума
+                    forum.blackrussia.online
+                </p>
+                <a href="https://github.com/TheFuZeeXD/BR-Helper" target="_blank">*подробная инструкция*</a>
                 <div class="switch-container">
                     <label class="switch">
-                        <input type="checkbox" id="backgroundURL-Toggle">
+                        <input type="checkbox" id="extensionToggle" checked>
                         <span class="slider round"></span>
                     </label>
-                    <span style="user-select: none;">Кастомный Background</span>
+                    <span style="user-select: none;">Включить расширение</span>
                 </div>
-                <input type="text" placeholder="Укажите URL" id="backgroundURL" maxlength="300">
+            </div>
+            <div id="Screen-Chrome-Exst_settings">
+                <h4>Настройки Автоответа</h4>
+                <form>
+                    <label>Укажите свой игровой NickName:</label>
+                    <input type="text" placeholder="Укажите свой NickName" id="NickName" maxlength="20">
+                    <label>Укажите свою игровую Должность:</label>
+                    <input type="text" placeholder="Укажите свою Должность" id="Rank" maxlength="50">
+                    <select id="rules" onchange="RulesChanges()">
+                        <option value="admin">Администратор</option>
+                        <option value="leader">Лидер Фракции</option>
+                        <option value="staff">Старший Состав</option>
+                    </select>
+                    <label>Выберите конфигурацию</label>
 
-            </form>
-        </div>
-        <div id="Screen-Chrome-Exst_credits">
-            <h2>Project by CAPONE</h2>
-            <h3>Contributor Tomioka Capone</h3>
-            <h3>UI/UX Clarence Capone</h3>
-            <a href="https://github.com/TheFuZeeXD/BR-Helper">Source♥code</a>
-        </div>
-        <footer>
-            <button id="Button1House">🧠</button>
-            <button id="Button2Settings">👻</button>
-            <button id="Button3Credits">⛅</button>
-        </footer>
+                </form>
+            </div>
+            <div id="Screen-Chrome-Exst_customization">
+                <h4>Кастомизация</h4>
+                <form>
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" id="Theme-color">
+                            <span class="slider round"></span>
+                        </label>
+                        <span style="user-select: none;">Светлая/Темная тема BRH</span>
+                    </div>
+
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" id="backgroundURL-Toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span style="user-select: none;">Кастомный Background</span>
+                    </div>
+                    <input type="text" placeholder="Укажите URL" id="backgroundURL" maxlength="300">
+
+                </form>
+            </div>
+            <div id="Screen-Chrome-Exst_credits">
+                <h2>Разработчики:</h2>
+                <h3>Contributor:<br>Lexa_Mixailov<br>Tomioka Capone<br><br>
+                    Ответы: Tomioka Capone<br>
+                    Дизайн/Скрипты: Clarence Capone</h3>
+                <a href="https://github.com/TheFuZeeXD/BR-Helper">Source♥code</a>
+            </div>
+
+        </main>
+
     </div>
     <script src="popup.js"></script>
 </body>
