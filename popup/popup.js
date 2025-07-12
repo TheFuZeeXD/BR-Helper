@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.getElementById('extensionToggle');
     const backgroundURL = document.querySelector("#backgroundURL-Toggle");
     const backgroundURLtext = document.querySelector("#backgroundURL");
+    const themer = document.querySelector("#Theme-color");
 
     if (localStorage.getItem("BackgroundURLbutton") == "true") {
         backgroundURLtext.classList.add("backgroundURL-Checked");
@@ -24,6 +25,21 @@ document.addEventListener('DOMContentLoaded', function () {
     backgroundURL.addEventListener('change', function () {
         chrome.storage.sync.set({ disabled: this.checked });
     });
+
+    chrome.storage.sync.get(['themer'], function (result) {
+        themer.checked = result.themer !== false;
+    });
+
+    // Сохраняем состояние при изменении
+    themer.addEventListener('change', function () {
+        chrome.storage.sync.set({ themer: this.checked });
+    });
+
+    if (localStorage.getItem("Themer") == "true") {
+        document.body.classList.remove("light");
+    } else {
+        document.body.classList.add("light");
+    }
 });
 
 const username = document.querySelector('#NickName');
@@ -33,30 +49,57 @@ const check = document.querySelector("#extensionToggle");
 const backgroundURL = document.querySelector("#backgroundURL-Toggle");
 const MainBody = document.querySelector("#TitleText");
 const backgroundURLtext = document.querySelector("#backgroundURL");
-const HouseMember = document.querySelector("#Screen-Chrome-Exst_house");
-const SettingMember = document.querySelector("#Screen-Chrome-Exst_settings");
-const CreditMember = document.querySelector("#Screen-Chrome-Exst_credits");
+const themer = document.querySelector("#Theme-color");
 
-document.getElementById('Button1House').addEventListener('click', () => {
+const managment = document.getElementById("popup-header-button_managment");
+const settings = document.getElementById("popup-header-button_settings");
+const customization = document.getElementById("popup-header-button_customization");
+const credits = document.getElementById("popup-header-button_credits");
 
+document.getElementById("popup-header-button_managment").addEventListener('click', () => {
+    managment.classList.add("activePage");
+    settings.classList.remove("activePage");
+    customization.classList.remove("activePage");
+    credits.classList.remove("activePage");
     document.querySelector("#Screen-Chrome-Exst_house").style.display = "block";
     document.querySelector("#Screen-Chrome-Exst_settings").style.display = "none";
+    document.querySelector("#Screen-Chrome-Exst_customization").style.display = "none";
     document.querySelector("#Screen-Chrome-Exst_credits").style.display = "none";
 });
 
-document.getElementById('Button2Settings').addEventListener('click', () => {
-
+document.getElementById("popup-header-button_settings").addEventListener('click', () => {
+    settings.classList.add("activePage");
+    managment.classList.remove("activePage");
+    customization.classList.remove("activePage");
+    credits.classList.remove("activePage");
     document.querySelector("#Screen-Chrome-Exst_house").style.display = "none";
     document.querySelector("#Screen-Chrome-Exst_settings").style.display = "block";
+    document.querySelector("#Screen-Chrome-Exst_customization").style.display = "none";
     document.querySelector("#Screen-Chrome-Exst_credits").style.display = "none";
 });
 
-document.getElementById('Button3Credits').addEventListener('click', () => {
-
+document.getElementById('popup-header-button_customization').addEventListener('click', () => {
+    settings.classList.remove("activePage");
+    managment.classList.remove("activePage");
+    customization.classList.add("activePage");
+    credits.classList.remove("activePage");
     document.querySelector("#Screen-Chrome-Exst_house").style.display = "none";
     document.querySelector("#Screen-Chrome-Exst_settings").style.display = "none";
+    document.querySelector("#Screen-Chrome-Exst_customization").style.display = "block";
+    document.querySelector("#Screen-Chrome-Exst_credits").style.display = "none";
+});
+
+document.getElementById('popup-header-button_credits').addEventListener('click', () => {
+    settings.classList.remove("activePage");
+    managment.classList.remove("activePage");
+    customization.classList.remove("activePage");
+    credits.classList.add("activePage");
+    document.querySelector("#Screen-Chrome-Exst_house").style.display = "none";
+    document.querySelector("#Screen-Chrome-Exst_settings").style.display = "none";
+    document.querySelector("#Screen-Chrome-Exst_customization").style.display = "none";
     document.querySelector("#Screen-Chrome-Exst_credits").style.display = "block";
 });
+
 
 if (localStorage.getItem("Rules") == undefined) {
     localStorage.setItem("Rules", "admin");
@@ -104,6 +147,19 @@ check.addEventListener("change", function () {
         chrome.storage.local.set({ Active: false });
     }
 });
+
+
+
+themer.addEventListener("change", function () {
+    if (this.checked) {
+        localStorage.setItem("Themer", true);
+        document.body.classList.remove("light");
+    } else {
+        localStorage.setItem("Themer", false);
+        document.body.classList.add("light");
+    }
+});
+
 
 
 backgroundURL.addEventListener("change", function () {
