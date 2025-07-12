@@ -2,23 +2,118 @@
     background-color: #49494900;
     color: #dd6300;
 
-    text-shadow: 1px 1px 3px black;
+    text-shadow: 1px 1px 1px black;
 }
 
 body {
-    background-color: #838383;
-    width: 300px;
-    padding: 10px;
+    background-color: #464646;
+    color: white;
+    width: 450px;
+    height: 350px;
     font-family: Arial, sans-serif;
     font-weight: 555;
+    margin: 0;
+}
 
+
+body.light {
+    color: rgb(0, 0, 0);
+    background-color: rgb(253, 253, 253);
+}
+
+body.light .popup-header {
+    background-color: #dbdbdb;
+}
+
+body.light h1 {
+    color: #3d3d3d;
+}
+
+body.light a {
+    color: rgb(75, 75, 75);
+}
+
+body.light a:hover {
+    color: rgb(0, 0, 0);
 }
 
 .popup-container {
-
-    text-align: center;
-
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
+
+.popup-header {
+    user-select: none;
+    width: 58px;
+    height: 100%;
+    background-color: rgb(85, 85, 85);
+}
+
+.popup-main {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-header_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+
+
+.popup-header_container button {
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    height: 35px;
+    transition: background-color 0.2s;
+}
+
+.popup-header_container button:hover {
+    background-color: rgb(110, 110, 110);
+}
+
+.popup-header_container button:active {
+    background-color: #f85c24;
+}
+
+#popup-header-button_managment.activePage {
+    background-color: #f85c24;
+}
+
+#popup-header-button_settings.activePage {
+    background-color: #f85c24;
+}
+
+#popup-header-button_customization.activePage {
+    background-color: #f85c24;
+}
+
+#popup-header-button_credits.activePage {
+    background-color: #f85c24;
+}
+
+.popup-header img {
+    padding-top: 5px;
+    display: block;
+    margin: auto;
+    width: 40px;
+}
+
+
 
 #Screen-Chrome-Exst_house {
     display: block;
@@ -32,6 +127,10 @@ body {
     display: none;
 }
 
+#Screen-Chrome-Exst_customization {
+    display: none;
+}
+
 p {
 
     font-size: 13px;
@@ -39,7 +138,7 @@ p {
 
 a {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: 14px;
     transition: color 0.2s;
@@ -47,15 +146,15 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: rgb(51, 51, 51);
+    color: rgb(185, 185, 185);
     cursor: pointer;
     font-size: 14px;
 }
 
 h1 {
-
+    justify-self: flex-start;
     user-select: none;
-    font-size: 16px;
+    font-size: 19px;
     color: #c7c7c7;
 }
 
@@ -168,6 +267,22 @@ input:checked+.slider:before {
     transform: translateX(26px);
 }
 
+form {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    margin: 7px 0px;
+}
+
+#Screen-Chrome-Exst_customization form {
+    margin-top: 0px;
+}
+
 form input::placeholder {
     color: white;
     text-align: center;
@@ -185,13 +300,13 @@ form input {
     color: white;
     padding: 3px;
     border-radius: 7px;
-    background-color: #494949;
+    background-color: #292929;
 }
 
 form select {
     color: white;
     margin: 6px;
-    background-color: #494949;
+    background-color: #292929;
     border: none;
     padding: 3px 14px;
     border-radius: 10px;
