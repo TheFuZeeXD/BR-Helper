@@ -23,14 +23,6 @@
           chrome.storage.local.get(["Active"], (getActive) => {
             chrome.storage.local.get(["Rules"], (getRules) => {
 
-              console.log("Exstension BR Helper enabled: ", getActive.Active);
-              console.log("Your NickName: ", getNickName.NickName);
-              console.log("Your Rank: ", getRank.Rank);
-              console.log("Your Permission: ", getRules.Rules);
-              console.log("Custom BG enabled: ", getBackgroundURLtoggle.BackgroundURLbutton);
-              console.log("Custom BG url: ", getBackgroundURL.backgroundURL);
-
-
               let backgroundURL = getBackgroundURL.backgroundURL;
               const backgroundURLbutton = getBackgroundURLtoggle.BackgroundURLbutton;
               const nickname = getNickName.NickName;
@@ -40,8 +32,11 @@
               let buttons;
 
               if (backgroundURLbutton != true) {
+                const elements = document.querySelectorAll('.p-nav, .p-header, .block-container, .p-footer, .button.button--cta, .buttonGroup, .button--scroll, .p-nav-inner, .p-sectionLinks, .pageNav-main, .pageNav-jump, .tabPanes, .menu-content, .overlay, .p-body-header, .p-title-value, .block-minorHeader');
+                elements.forEach(el => {
+                  el.style.opacity = "1";
+                });
                 backgroundURL = null;
-                document.querySelector(".p-header").style.opacity = "100%";
               }
 
               const pageWrapper = document.querySelector('.p-pageWrapper');
