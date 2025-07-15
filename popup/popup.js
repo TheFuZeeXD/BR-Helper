@@ -4,33 +4,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const backgroundURLtext = document.querySelector("#backgroundURL");
     const themer = document.querySelector("#Theme-color");
 
+
+
+    // toggle
     if (localStorage.getItem("BackgroundURLbutton") == "true") {
         backgroundURLtext.classList.add("backgroundURL-Checked");
     }
-    // Загружаем сохраненное состояние
+
     chrome.storage.sync.get(['enabled'], function (result) {
         toggle.checked = result.enabled !== false;
     });
 
-    // Сохраняем состояние при изменении
+
     toggle.addEventListener('change', function () {
         chrome.storage.sync.set({ enabled: this.checked });
     });
 
+    // backgroundURL backgroundURLtext
     chrome.storage.sync.get(['disabled'], function (result) {
         backgroundURL.checked = result.disabled !== false;
     });
 
-    // Сохраняем состояние при изменении
+
     backgroundURL.addEventListener('change', function () {
         chrome.storage.sync.set({ disabled: this.checked });
     });
 
+    // themer
     chrome.storage.sync.get(['themer'], function (result) {
         themer.checked = result.themer !== false;
     });
 
-    // Сохраняем состояние при изменении
+
     themer.addEventListener('change', function () {
         chrome.storage.sync.set({ themer: this.checked });
     });
@@ -40,7 +45,54 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         document.body.classList.add("light");
     }
+
 });
+
+function saveCheckboxStates() {
+    const checkboxes = document.querySelectorAll('.multi-select input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        localStorage.setItem(`checkbox_${checkbox.value}`, checkbox.checked);
+    });
+}
+
+
+function restoreCheckboxStates() {
+    const checkboxes = document.querySelectorAll('.multi-select input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        const savedState = localStorage.getItem(`checkbox_${checkbox.value}`);
+        if (savedState !== null) {
+            checkbox.checked = savedState === 'true';
+        }
+    });
+}
+
+function updateServersList() {
+    const serverValues = Array.from(
+        document.querySelectorAll('.multi-select input[type="checkbox"]:not(:checked)')
+    ).map(checkbox => checkbox.value);
+
+    chrome.storage.local.set({ ServersList: serverValues });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    restoreCheckboxStates();
+    updateServersList();
+});
+
+
+const checkboxes = document.querySelectorAll('.multi-select input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+
+        localStorage.setItem(`checkbox_${this.value}`, this.checked);
+
+        updateServersList();
+
+        saveCheckboxStates();
+    });
+});
+
 
 const username = document.querySelector('#NickName');
 const rank = document.querySelector("#Rank");
@@ -107,7 +159,7 @@ if (localStorage.getItem("Rules") == undefined) {
 };
 
 if (localStorage.getItem("Active") == undefined) {
-    localStorage.setItem("active", true);
+    localStorage.setItem("Active", true);
     chrome.storage.local.set({ Active: true });
 };
 
@@ -129,7 +181,7 @@ backgroundURLtext.addEventListener("input", function () {
 
 window.addEventListener("load", function () {
     const getNickName = localStorage.getItem("NickName");
-    const getRank = localStorage.getItem("Rank");//localStorage.getItem("Rank");
+    const getRank = localStorage.getItem("Rank");
     const getBackgrountext = localStorage.getItem("backgroundURL");
 
     if (getBackgrountext) backgroundURLtext.value = getBackgrountext;
@@ -186,5 +238,3 @@ window.addEventListener("load", function () {
     const getRules = localStorage.getItem("Rules");
     if (getRules) myrules.value = getRules;
 });
-
-
