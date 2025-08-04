@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function getVersion() {
         try {
-            const rawUrl = 'https://raw.githubusercontent.com/TheFuZeeXD/BR-Helper/FireFox/manifest.json';
+            const rawUrl = 'https://raw.githubusercontent.com/TheFuZeeXD/BR-Helper/refs/heads/FireFox/manifest.json';
             const response = await fetch(rawUrl);
             const manifest = await response.json();
 
