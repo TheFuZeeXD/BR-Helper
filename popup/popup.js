@@ -4,6 +4,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const backgroundURLtext = document.querySelector("#backgroundURL");
     const themer = document.querySelector("#Theme-color");
 
+    // check avaiable version
+    let versionString = null;
+    async function main() {
+        versionString = await getVersion();
+        const myVersion = "1.4.1";
+        const warning = document.querySelector(".newUpdate");
+        if (myVersion != versionString) {
+            warning.style.opacity = "1";
+        } else {
+            warning.style.opacity = "0";
+        }
+    }
+    main();
+
+    async function getVersion() {
+        try {
+            const rawUrl = 'https://raw.githubusercontent.com/TheFuZeeXD/BR-Helper/chrome/manifest.json';
+            const response = await fetch(rawUrl);
+            const manifest = await response.json();
+
+            return `${manifest.version}`;
+
+        } catch (error) {
+            console.error('Error fetching version:', error);
+            return null;
+        }
+    }
+
 
 
     // toggle
