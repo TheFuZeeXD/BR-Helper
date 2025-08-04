@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "BR Helper | Скрипт для Форума",
+  "version": "1.4.1",
+  "description": "Black Russia Helper — это расширение специально разработанное для веб-браузера FireFox, разработанное для автоматизации ответов на темы форума forum.blackrussia.online. Оно значительно упрощает взаимодействие с форумом, позволяя автоматически вставлять шаблоны сообщений, ускорять модерацию, обработку заявок и выполнение других рутинных действий.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "br-helper@blackrussia.online",
+      "strict_min_version": "58.0"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://forum.blackrussia.online/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://forum.blackrussia.online/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "icons": {
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  }
+}
