@@ -400,5 +400,16 @@ form button:hover {
 
 #forum_link:hover {
     color: black;
-    background-color: rgb(253, 194, 194);
+    background-color: rgb(255, 171, 93);
+}
+
+.newUpdate {
+    opacity: 0;
+    justify-self: center;
+    font-size: 5px;
+}
+
+.newUpdate h1 {
+    margin-top: 40px;
+    font-size: 10px;
 }
