@@ -1,10 +1,6 @@
 # Black Russia Helper
 
-
-**Black Russia Helper** — это расширение для FireFox и FireFox for Android, разработанное как автоответчик на форуме [forum.blackrussia.online](https://forum.blackrussia.online). Оно обеспечивает быстрые и удобные шаблоны ответов для пользователей, активно работающих на форуме.
-
-**Black Russia Helper** — это расширение для Google Chrome, разработанное как автоответчик на форуме [forum.blackrussia.online](https://forum.blackrussia.online). Оно обеспечивает быстрые и удобные шаблоны ответов для пользователей, активно работающих на форуме.
-
+**Black Russia Helper** — это расширение для Браузеров FireFox, разработанное как автоответчик на форуме [forum.blackrussia.online](https://forum.blackrussia.online). Оно обеспечивает быстрые и удобные шаблоны ответов для пользователей, активно работающих на форуме.
 
 ## 📸 Скриншоты
 
@@ -25,7 +21,6 @@
 ```
 
 ---
-
 
 ## ⚙️ Установка для FireFox
 Для установки на FireFox перейдите по этой ссылке [клик](https://addons.mozilla.org/ru/firefox/addon/br-helper-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82-%D0%B4%D0%BB%D1%8F-%D1%84%D0%BE%D1%80%D1%83%D0%BC%D0%B0/)
@@ -52,10 +47,6 @@
 
 ## ⚙️ Установка для Chrome
 
-
-## ⚙️ Установка
-
-
 1. Склонируйте репозиторий:
    ```markdown
    bash
@@ -63,7 +54,6 @@
    ```
 
 Либо скачайте готовую сборку в разделе [Releases](https://github.com/TheFuZeeXD/BR-Helper/releases)
-
 
 2. Распакуйте br-helper.X.X.X.v.zip в удобную вами директорию
 
@@ -73,14 +63,6 @@
    ```
 5. Включите **Developer Mode** (Режим разработчика)
 6. Нажмите **Load unpacked** (Загрузить распакованное расширение) и выберите папку `BR-Helper`
-
-2. В браузере Chrome откройте:
-     ```markdown
-   chrome://extensions/
-   ```
-4. Включите **Developer Mode** (Режим разработчика)
-5. Нажмите **Load unpacked** (Загрузить распакованное расширение) и выберите папку `BR-Helper`
-
 
 ## 👤 Кому будет полезно
 
