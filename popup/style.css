@@ -1,6 +1,6 @@
 ::selection {
     background-color: #49494900;
-    color: #dd6300;
+    color: #ff7300;
 
     text-shadow: 1px 1px 1px black;
 }
@@ -8,15 +8,15 @@
 html {
     scroll-behavior: smooth;
     overscroll-behavior-y: contain;
-    /* или 'auto' / 'none' */
 }
 
 body {
-    background-color: #464646;
+    background-color: #252a33;
     color: white;
     width: 490px;
     height: 430px;
     font-family: Arial, sans-serif;
+    font-family: Roboto;
     font-weight: 555;
     margin: 0;
 }
@@ -53,7 +53,7 @@ body.light a:hover {
     user-select: none;
     width: 58px;
     height: 100%;
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(54, 56, 70)
 }
 
 .popup-main {
@@ -119,6 +119,20 @@ body.light a:hover {
     width: 40px;
 }
 
+#Screen-Chrome-Exst_house p {
+    padding: 5px;
+
+}
+
+#Screen-Chrome-Exst_credits p {
+    padding: 10px;
+    font-size: 12px;
+    width: 300px;
+}
+
+#Screen-Chrome-Exst_credits p a {
+    font-size: 12px;
+}
 
 
 #Screen-Chrome-Exst_house {
@@ -412,4 +426,8 @@ form button:hover {
 .newUpdate h1 {
     margin-top: 40px;
     font-size: 10px;
+}
+
+#w-animation-typing-title {
+    width: 100%;
 }
