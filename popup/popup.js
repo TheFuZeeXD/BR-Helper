@@ -4,27 +4,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const backgroundURLtext = document.querySelector("#backgroundURL");
     const themer = document.querySelector("#Theme-color");
 
-    // check avaiable version
+    // Check version by GitHub API
     let versionString = null;
+
     async function main() {
         versionString = await getVersion();
-        const myVersion = "1.4.1";
+        console.log(versionString);
+        const myVersion = "1.4.2";
         const warning = document.querySelector(".newUpdate");
-        if (myVersion != versionString) {
-            warning.style.opacity = "1";
-        } else {
-            warning.style.opacity = "0";
+
+        if (warning) {
+            warning.style.opacity = (myVersion != versionString) ? "1" : "0";
         }
     }
-    main();
 
     async function getVersion() {
         try {
-            const rawUrl = 'https://raw.githubusercontent.com/TheFuZeeXD/BR-Helper/refs/heads/FireFox/manifest.json';
-            const response = await fetch(rawUrl);
-            const manifest = await response.json();
+            const apiUrl = 'https://api.github.com/repos/TheFuZeeXD/BR-Helper/contents/manifest.json?ref=FireFox';
+            const response = await fetch(apiUrl);
+            const data = await response.json();
 
-            return `${manifest.version}`;
+
+            const decodedContent = atob(data.content.replace(/\s/g, ''));
+            const manifest = JSON.parse(decodedContent);
+
+            return manifest.version;
 
         } catch (error) {
             console.error('Error fetching version:', error);
@@ -32,6 +36,49 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
+    main();
+
+    const textElement = document.querySelector('#w-animation-typing-title');
+    const words = ["Contributors:", "Tomioka Capone", "Lexa Mixailov", "Scripts:", "Artyom Capone", "Tomioka Capone"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 150;
+
+    function typeWriter() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+
+            textElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+
+            textElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+
+        if (!isDeleting && charIndex === currentWord.length) {
+
+            setTimeout(() => {
+                isDeleting = true;
+                typingSpeed = 50;
+            }, 3000);
+        }
+
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 100;
+        }
+
+        setTimeout(typeWriter, typingSpeed);
+    }
+
+
+    typeWriter();
 
 
     // toggle
