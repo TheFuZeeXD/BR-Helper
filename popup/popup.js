@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function main() {
         versionString = await getVersion();
         console.log(versionString);
-        const myVersion = "1.4.1";
+        const myVersion = "1.4.2";
         const warning = document.querySelector(".newUpdate");
 
         if (warning) {
@@ -40,6 +40,46 @@ document.addEventListener('DOMContentLoaded', function () {
     main();
 
 
+    const textElement = document.querySelector('#w-animation-typing-title');
+    const words = ["Contributors:", "Tomioka Capone", "Lexa Mixailov", "Scripts:", "Artyom Capone", "Tomioka Capone"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 150;
+
+    function typeWriter() {
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+
+            textElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+
+            textElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+
+        if (!isDeleting && charIndex === currentWord.length) {
+
+            setTimeout(() => {
+                isDeleting = true;
+                typingSpeed = 50;
+            }, 3000);
+        }
+
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 100;
+        }
+
+        setTimeout(typeWriter, typingSpeed);
+    }
+
+
+    typeWriter();
 
 
     // toggle
