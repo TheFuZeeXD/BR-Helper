@@ -19,14 +19,14 @@
   // WARNING! THIS IS const DONT WORK
 
 
-  // Chrome cookie
-  chrome.storage.local.get(["ServersList"], (getServersList) => {
-    chrome.storage.local.get(["BackgroundURLbutton"], (getBackgroundURLtoggle) => {
-      chrome.storage.local.get(["backgroundURL"], (getBackgroundURL) => {
-        chrome.storage.local.get(["NickName"], (getNickName) => {
-          chrome.storage.local.get(["Rank"], (getRank) => {
-            chrome.storage.local.get(["Active"], (getActive) => {
-              chrome.storage.local.get(["Rules"], (getRules) => {
+  // FireFox cookie
+  browser.storage.local.get(["ServersList"], (getServersList) => {
+    browser.storage.local.get(["BackgroundURLbutton"], (getBackgroundURLtoggle) => {
+      browser.storage.local.get(["backgroundURL"], (getBackgroundURL) => {
+        browser.storage.local.get(["NickName"], (getNickName) => {
+          browser.storage.local.get(["Rank"], (getRank) => {
+            browser.storage.local.get(["Active"], (getActive) => {
+              browser.storage.local.get(["Rules"], (getRules) => {
 
                 const ServersList = getServersList.ServersList;
                 let backgroundURL = getBackgroundURL.backgroundURL;
