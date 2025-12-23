@@ -5,6 +5,9 @@
     text-shadow: 1px 1px 1px black;
 }
 
+* {
+    transition: all 0.3s;
+}
 html {
     scroll-behavior: smooth;
     overscroll-behavior-y: contain;
@@ -13,22 +16,28 @@ html {
 body {
     background-color: #252a33;
     color: white;
-    width: 490px;
-    height: 430px;
+    width: 470px;
+    height: 480px;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    overflow: hidden;
+    background-size: cover;
+    background: linear-gradient(180deg, rgb(30, 35, 48), rgb(15, 15, 15));
     font-family: Arial, sans-serif;
     font-family: Roboto;
     font-weight: 555;
     margin: 0;
+    transition: all 0.3s;
 }
 
 
 body.light {
     color: rgb(0, 0, 0);
-    background-color: rgb(253, 253, 253);
+    background: linear-gradient(180deg, rgb(255, 255, 255), rgb(180, 180, 180));
 }
 
 body.light .popup-header {
-    background-color: #dbdbdb;
+    background: #dbdbdb;
 }
 
 body.light h1 {
@@ -43,17 +52,115 @@ body.light a:hover {
     color: rgb(0, 0, 0);
 }
 
+body.light #forum_link {
+    color: rgb(44, 44, 44);
+    position: relative;
+    top: 20px;
+    border-radius: 20px;
+    font-family: monospace;
+    padding: 7px 45px;
+    background: linear-gradient(90deg, 
+        rgba(208, 181, 236, 0.8) 0%, 
+        rgba(194, 137, 255, 0.8) 100%);
+    transition: all 0.6s ease;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.light #forum_link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(229, 173, 235, 0.2) 50%, 
+        transparent 100%);
+    transition: left 0.7s ease;
+    border-radius: 20px;
+}
+
+body.light #forum_link:hover {
+    background: linear-gradient(90deg, 
+        rgba(221, 189, 255, 0.8) 0%,
+        rgba(190, 130, 253, 0.8) 50%, 
+        rgba(221, 189, 255, 0.8) 100%);
+    background-size: 200% auto;
+    background-position: 0 0;
+    animation: shimmer 2s infinite;
+    box-shadow: 0 0 25px rgba(190, 130, 253, 0.8);
+}
+
+body.light #forum_link:hover::before {
+    left: 100%;
+}
+
+
+body.light #conf_link {
+    color: #e6e6ff;
+    position: relative;
+    top: 20px;
+    border-radius: 20px;
+    font-family: monospace;
+    padding: 10px 45px;
+    background: 
+        linear-gradient(135deg,
+            #07072c 0%,
+            #121230 25%,
+            #330066 50%,
+            #310e31 75%,
+            #000033 100%);
+    background-size: 400% 400%;
+    transition: all 0.5s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+body.light #conf_link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.03) 2px,
+            rgba(255, 255, 255, 0.03) 4px
+        );
+    animation: stormScan 10s linear infinite;
+    pointer-events: none;
+}
+
+body.light #conf_link:hover {
+    background-position: 100% 100%;
+    animation: cosmicStorm 3s infinite alternate;
+    box-shadow: 
+        0 0 40px rgba(102, 0, 153, 0.7),
+        0 0 80px rgba(51, 0, 102, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
 .popup-container {
     display: flex;
     width: 100%;
     height: 100%;
+    border: 1px solid black;
 }
 
 .popup-header {
     user-select: none;
     width: 58px;
     height: 100%;
-    background-color: rgb(54, 56, 70)
+    background: linear-gradient(180deg, rgb(44, 52, 75), rgb(15, 15, 15));
 }
 
 .popup-main {
@@ -65,6 +172,7 @@ body.light a:hover {
     align-items: center;
     flex-direction: column;
     width: 100%;
+    overflow: hidden;
     height: 100%;
 }
 
@@ -89,11 +197,11 @@ body.light a:hover {
 }
 
 .popup-header_container button:hover {
-    background-color: rgb(110, 110, 110);
+background-color: #746c6c70;
 }
 
 .popup-header_container button:active {
-    background-color: #f85c24;
+background-color: #f85c24;
 }
 
 #popup-header-button_managment.activePage {
@@ -119,11 +227,19 @@ body.light a:hover {
     width: 40px;
 }
 
+.popup-header img:hover {
+    border-radius: 16px;
+}
 #Screen-Chrome-Exst_house p {
     padding: 5px;
 
 }
-
+#credit-logo {
+    user-select: none;
+    width: 230px;
+    display: block;
+    margin: auto;
+}
 #Screen-Chrome-Exst_credits p {
     padding: 10px;
     font-size: 12px;
@@ -134,6 +250,9 @@ body.light a:hover {
     font-size: 12px;
 }
 
+#Screen-Chrome-Exst_credits h1 {
+    margin: auto;
+}
 
 #Screen-Chrome-Exst_house {
     display: block;
@@ -158,7 +277,7 @@ p {
 
 a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #f85c24;
     cursor: pointer;
     font-size: 14px;
     transition: color 0.2s;
@@ -195,14 +314,14 @@ h4 {
 
 #Screen-Chrome-Exst_credits a {
     text-decoration: underline;
-    color: #ffc393;
+    color: #f85c24;
     font-family: cursive;
     font-size: 16px;
 
 }
 
 #Screen-Chrome-Exst_credits a:hover {
-    color: rgb(214, 182, 0);
+   color: #d64510;
 }
 
 
@@ -225,7 +344,7 @@ footer button {
 }
 
 footer button:hover {
-    background-color: #acacac;
+    background-color: #383838;
     box-shadow: 1px 1px 9px;
 }
 
@@ -365,10 +484,10 @@ form button:hover {
     margin-top: 10px;
     overflow-y: scroll;
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
-    width: 200px;
-    height: 130px;
+    width: 250px;
+    height: 140px;
 
 }
 
@@ -383,7 +502,7 @@ form button:hover {
 }
 
 .multi-select::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #a0a0a0, #f5f5f5);
+    background: linear-gradient(to bottom, #fafafa, #f5f5f5);
     /* Серо-белый градиент */
     border-radius: 5px;
     border: 2px solid transparent;
@@ -400,6 +519,7 @@ form button:hover {
     margin-bottom: 5px;
 }
 
+
 #forum_link {
     color: white;
     position: relative;
@@ -407,14 +527,137 @@ form button:hover {
     border-radius: 20px;
     font-family: monospace;
     padding: 7px 45px;
-    background-color: #0a0a0a;
-    transition: color 0.1s, background-color 0.1s;
+    background: linear-gradient(90deg, 
+        rgba(138, 159, 252, 0.8) 0%, 
+        rgba(191, 96, 238, 0.8) 100%);
+    transition: all 0.6s ease;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
+#forum_link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        transparent 100%);
+    transition: left 0.7s ease;
+    border-radius: 20px;
 }
 
 #forum_link:hover {
-    color: black;
-    background-color: rgb(255, 171, 93);
+    background: linear-gradient(90deg, 
+        rgba(138, 159, 252, 0.8) 0%, 
+        rgba(191, 96, 238, 0.8) 50%, 
+        rgba(138, 159, 252, 0.8) 100%);
+    background-size: 200% auto;
+    background-position: 0 0;
+    animation: shimmer 2s infinite;
+    box-shadow: 0 0 25px rgba(191, 96, 238, 0.8);
+}
+
+#forum_link:hover::before {
+    left: 100%;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+#toggleAllBtn {
+    cursor: pointer;
+    width: 120px;
+    font-family: roboto;
+    color: white;
+    padding: 4px 10px;
+    background-color: #383838;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+#toggleAllBtn:hover {
+    transition: background-color 0.2s;
+    background-color: #5a5a5a;
+}
+#toggleAllBtn:active {
+    transition: background-color 0.1s;
+    background-color: #ff7300;
+}
+
+#conf_link {
+    color: #1f1f1f;
+    position: relative;
+    top: 20px;
+    border-radius: 20px;
+    font-family: monospace;
+    padding: 10px 45px;
+    background: 
+        linear-gradient(135deg,
+            #84848d 0%,
+            #a0a0a0 25%,
+            #dfdfdf 50%,
+            #d1d1d1 75%,
+            #c2c2c2 100%);
+    background-size: 400% 400%;
+    transition: all 0.5s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 5px rgba(14, 14, 14, 0.5);
+}
+
+#conf_link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(51, 0, 102, 0.082) 2px,
+            rgba(97, 0, 136, 0.096) 4px
+        );
+    animation: stormScan 10s linear infinite;
+    pointer-events: none;
+}
+
+#conf_link:hover {
+    background-position: 100% 100%;
+    animation: cosmicStorm 3s infinite alternate;
+    box-shadow: 
+        0 0 40px rgba(97, 0, 136, 0.7),
+        0 0 80px rgba(51, 0, 102, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.226);
+    transform: scale(1.05);
+}
+
+@keyframes cosmicStorm {
+    0% { 
+        filter: hue-rotate(0deg) brightness(1);
+        box-shadow: 0 0 30px rgba(102, 0, 153, 0.6);
+    }
+    100% { 
+        filter: hue-rotate(30deg) brightness(1.3);
+        box-shadow: 
+            0 0 50px rgba(153, 0, 153, 0.8),
+            0 0 100px rgba(102, 0, 204, 0.4);
+    }
+}
+
+@keyframes stormScan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
 
 .newUpdate {
@@ -429,5 +672,27 @@ form button:hover {
 }
 
 #w-animation-typing-title {
-    width: 100%;
+    width: 100px;
+}
+
+#Screen-Chrome-Exst_house, #Screen-Chrome-Exst_settings, #Screen-Chrome-Exst_customization, #Screen-Chrome-Exst_credits {
+    animation: fadeIn 0.3s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+}
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(100px);
+}
+}
+
+#TitleText.activetitle {
+    transform: translateY(80px);
 }
