@@ -1,6 +1,6 @@
-# Black Russia Helper - Chrome Extension
+# Black Russia Helper - FireFox Extension
 
-![Extension Preview](https://raw.githubusercontent.com/TheFuZeeXD/BR-Helper/refs/heads/main/icon128.png) <!-- Замените на реальный скриншот -->
+![Extension Preview](https://github.com/TheFuZeeXD/BR-Helper/blob/chrome/image/icon128.png)
 
 Расширение для автоматизации работы на форуме Black Russia Online.
 
@@ -15,11 +15,12 @@ Black Russia Helper - это удобный инструмент для:
 
 1. Скачайте архив с расширением из [последнего релиза](https://github.com/TheFuZeeXD/BR-Helper/releases/latest)
 2. Распакуйте архив в удобную папку
-3. В Chrome перейдите в `chrome://extensions/`
-4. Включите "Режим разработчика" (правый верхний угол)
-5. Нажмите "Загрузить распакованное расширение"
+3. В Chrome перейдите в `about:debugging`
+4. Перейдите в раздел (Этот FireFox)
+5. Нажмите "Загрузить временное дополнение"
 6. Выберите папку с распакованным расширением
 
+ВНИМАНИЕ! Мы рекомендуем устанавливать BR-Helper с официального сайта [Firefox Browser ADD-ONS](https://addons.mozilla.org/ru/firefox/addon/br-helper-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82-%D0%B4%D0%BB%D1%8F-%D1%84%D0%BE%D1%80%D1%83%D0%BC%D0%B0/)
 ## 🎛 Функционал
 
 ### Основные возможности
@@ -36,8 +37,8 @@ Black Russia Helper - это удобный инструмент для:
 
 ## 🤝 Разработчики
 
-- **Tomioka Capone** - Основной разработчик  
-- **Clarence Capone** - UI/UX дизайнер  
+- **Tomioka Capone** - Скриптор
+- **TheFuZeeXD** - UI/UX дизайнер  
 
 [Полный список контрибьюторов](https://github.com/TheFuZeeXD/BR-Helper/graphs/contributors)
 
