@@ -1,4 +1,4 @@
-# Black Russia Helper - Chrome Extension
+# Black Russia Helper - FireFox Extension
 
 ![Extension Preview](https://github.com/TheFuZeeXD/BR-Helper/blob/chrome/image/icon128.png)
 
