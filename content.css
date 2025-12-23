@@ -16,6 +16,12 @@
     padding: 0;
 }
 
+.p-footer-copyrightRow {
+    opacity: 0;
+}
+.uix_extendedFooter {
+    opacity: 0.8;
+}
 .button--primary.brh-button:hover {
     background-color: #e03e00;
     transform: translateY(-2px);

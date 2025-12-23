@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRH | Главное</title>
+</head>
+<style>
+
+    html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #141820;
+        color: white;
+        flex-direction: column;
+        animation: fadein 0.5s 0.4s both;
+        opacity:0;
+    }
+
+
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top:0;
+    margin: 20px;
+}
+
+#logo img {
+width: 35px;
+}
+
+#logo {
+    background-color: #797979; 
+    border-radius: 10px;
+    padding:0px 10px;
+    user-select: none;
+    font-size: 10px;
+    margin-left: 40px;
+    justify-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#list {
+    user-select: none;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+#list ul a {
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14.5px;
+    transition: color 0.2s;
+}
+
+#list ul a:hover {
+    color: #f85c24;
+}
+
+#list ul a:active {
+    transition: color 0.1s;
+    color: #9e1818;
+    font-size: 14px;
+} 
+
+#list ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #FF4500;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+form {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    margin: 80px 0px;
+    justify-content: center;
+    align-items: center;
+}
+#awsner-container {
+    height: auto;
+}
+
+
+
+form input::placeholder {
+    color: white;
+    text-align: center;
+    transition: margin-left 0.2s;
+}
+
+form input:focus::placeholder {
+    margin-left: 200px;
+}
+
+form input {
+    text-align: center;
+    border: none;
+    margin: 3px;
+    color: white;
+    padding: 3px;
+    border-radius: 7px;
+    background-color: #3f3c3c;
+}
+
+form select {
+    color: white;
+    margin: 6px;
+    background-color: #292929;
+    border: none;
+    padding: 3px 14px;
+    border-radius: 10px;
+}
+
+form input:focus {
+    border: none;
+    outline: none;
+}
+
+form button {
+    user-select: none;
+    cursor: pointer;
+    border: none;
+    margin-top: 3px;
+    padding: 3px 17px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+form button:hover {
+    background-color: #a5a5a5;
+}
+
+label {
+    margin: 7px 0px;
+}
+.fadeclass {
+    animation: fadein 0.5s 0.1s both;
+    opacity: 0;
+    }
+
+    @keyframes fadein {
+        from {opacity:0;transform: translateY(100px); }
+        to   {opacity: 1; transform: translateY(0px); }
+    }
+</style>
+<body>
+ <header>
+    <div id="logo">
+        <img src="/image/favicon.png" alt="">
+        <h1>BR-Helper</h1>
+    </div>
+    <h1 style="margin: 0px 15px;">-</h1>
+    <h1 id="title-header"></h1>
+    <div id="list">
+        <ul>
+            <a href="#home">Главное</a>
+            <a href="#awsner">Автоответ</a>
+            <a href="#custom">Кастомизация</a>
+            <a href="#settings">Доп. Настройки</a>
+            <a href="#about">О расширении</a>
+        </ul>
+    </div>
+ </header>
+ <div id="container"></div>
+</body>
+<script src="home.js"></script>
+</html>
