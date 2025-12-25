@@ -1,6 +1,6 @@
 # Black Russia Helper - Chrome Extension
 
-<img src="https://github.com/TheFuZeeXD/BR-Helper/blob/chrome/image/icon128.png">
+<img src="https://github.com/TheFuZeeXD/BR-Helper/blob/chrome/image/icon128.png?raw=true">
 
 Расширение для автоматизации работы на форуме Black Russia Online.
 
