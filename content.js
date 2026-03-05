@@ -1,3 +1,5 @@
+
+
 (function () {
   'use strict';
 
@@ -18,19 +20,22 @@
   //       status: false,
   // WARNING! THIS IS const DONT WORK
 
+
   // Chrome cookie
 chrome.storage.local.get(["enableNickName"], (StatusNickName) => {
-chrome.storage.local.get(["enableRank"], (StatusRank) => {
+ chrome.storage.local.get(["enableRank"], (StatusRank) => {
   chrome.storage.local.get(["ServersList"], (getServersList) => {
+   chrome.storage.local.get(["NickName"], (getNickName) => {
     chrome.storage.local.get(["BackgroundURLbutton"], (getBackgroundURLtoggle) => {
-      chrome.storage.local.get(["backgroundURL"], (getBackgroundURL) => {
-        chrome.storage.local.get(["NickName"], (getNickName) => {
-          chrome.storage.local.get(["Rank"], (getRank) => {
-            chrome.storage.local.get(["Active"], (getActive) => {
-              chrome.storage.local.get(["Rules"], (getRules) => {
+     chrome.storage.local.get(["backgroundURL"], (getBackgroundURL) => {
+      chrome.storage.local.get(["Rank"], (getRank) => {
+       chrome.storage.local.get(["Active"], (getActive) => {
+        chrome.storage.local.get(["Rules"], (getRules) => {
+          chrome.storage.local.get(["LikeEnableButton"], (getLikeEnableButton) => {
                 const ServersList = getServersList.ServersList;
                 const backgroundURLbutton = getBackgroundURLtoggle.BackgroundURLbutton;
                 const active = getActive.Active;
+                const enabledLikeButton = getLikeEnableButton.LikeEnableButton;
                 const enableNickName = StatusNickName.enableNickName;
                 const enableRank = StatusRank.enableRank;
                 const permission = getRules.Rules;
@@ -65,14 +70,16 @@ chrome.storage.local.get(["enableRank"], (StatusRank) => {
                 if (backgroundURLbutton != true) {
                   const elements = document.querySelectorAll('.p-nav, .p-header, .block-container, .p-footer, .button.button--cta, .buttonGroup, .button--scroll, .p-nav-inner, .p-sectionLinks, .pageNav-main, .pageNav-jump, .tabPanes, .menu-content, .overlay, .p-body-header, .p-title-value, .block-minorHeader');
                   elements.forEach(el => {
-                    el.style.opacity = "1";
+                    el.style.opacity = '1';
                   });
                   backgroundURL = null;
-                }
+                } 
+                const style = document.createElement("style");
+                style.textContent = ` :root {
+                    --BageURL: url(${backgroundURL});
+                  }`;
+                  document.documentElement.appendChild(style);
 
-                // Background
-                const pageWrapper = document.querySelector('.p-pageWrapper');
-                pageWrapper.style.setProperty('--BageURL', `url("${backgroundURL}")`);
 
                 // if forum.blackrussia.online
                 if (window.location.href.includes('https://forum.blackrussia.online/threads/')) {
@@ -2715,18 +2722,30 @@ chrome.storage.local.get(["enableRank"], (StatusRank) => {
 
                     function addButtons() {
                       const replyContainer = document.querySelector('.button--icon--reply')?.parentElement;
+                      const threadTitleContainer = document.querySelector('.p-title-value')?.parentElement;
                       if (!replyContainer) {
                         setTimeout(addButtons, 500);
                         return;
                       }
 
+
                       const selectButton = createButton('Ответы', 'selectAnswer',
                         'border-radius: 11px; margin-right: 8px; border: 2px solid; border-color: rgb(255, 255, 255);');
-
-                      replyContainer.insertBefore(selectButton, document.querySelector('.button--icon--reply'));
+                      if (enabledLikeButton) { 
+                        const LikeButton = createButton('Лайк', 'likeAnswer',
+                        'border-radius: 11px; margin-right: 8px; border: 2px solid; border-color: rgb(104, 255, 242);');
+                        threadTitleContainer.after(LikeButton, document.querySelector('.label-append'));
+                        LikeButton.addEventListener('click', () => {
+                        document.querySelectorAll('a[data-reaction-id="1"]').forEach(element => {
+                        element.click();
+                      });
+                      });
+                      }
+                        replyContainer.insertBefore(selectButton, document.querySelector('.button--icon--reply'));
                       selectButton.addEventListener('click', () => {
                         showAnswersModal();
                       });
+
                     }
 
                     function createButton(text, id, style) {
@@ -2893,6 +2912,7 @@ chrome.storage.local.get(["enableRank"], (StatusRank) => {
       });
     });
   });
+});
 });
 });
 })();

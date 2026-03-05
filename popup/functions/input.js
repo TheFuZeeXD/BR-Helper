@@ -55,6 +55,18 @@ backgroundURL.addEventListener("change", function () {
 });
 
 
+likeEnableButton.addEventListener("change", function () {
+    if (this.checked) {
+        localStorage.setItem("LikeEnableButton", true);
+        username.disabled = false;
+        chrome.storage.local.set({ LikeEnableButton: true });
+    } else {
+        localStorage.setItem("LikeEnableButton", false);
+        username.disabled = true;
+        chrome.storage.local.set({ LikeEnableButton: false });
+    }
+});
+
 enableNickName.addEventListener("change", function () {
     if (this.checked) {
         localStorage.setItem("enableNickName", true);
@@ -99,7 +111,7 @@ enableRank.addEventListener("change", function () {
                 updateServersList();
                 toggleAllBtn.textContent = 'Выбрать все';
             } else {
-                toggleAllBtn.textContent = 'Выбрать все / Снять все';
+                toggleAllBtn.textContent = 'Выбрать все';
             }
         }
         

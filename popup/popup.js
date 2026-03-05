@@ -10,6 +10,7 @@ const settings = document.getElementById("popup-header-button_settings");
 const customization = document.getElementById("popup-header-button_customization");
 const credits = document.getElementById("popup-header-button_credits");
 const textElement = document.querySelector('#w-animation-typing-title');
+const likeEnableButton = document.querySelector("#LikeEnableButton");
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -141,11 +142,13 @@ window.addEventListener("load", function () {
     const getBackgrountext = localStorage.getItem("backgroundURL");
     const getEnableNickName = localStorage.getItem("enableNickName");
     const getEnableRank = localStorage.getItem("enableRank");
+    const getLikeEnableButton = localStorage.getItem("LikeEnableButton");
     if (getEnableNickName === "true") {enableNickName.checked = true; username.disabled = false;} else {username.disabled = true;}
     if (getEnableRank === "true") {enableRank.checked = true; rank.disabled = false;} else {rank.disabled = true;}
     if (getBackgrountext) backgroundURLtext.value = getBackgrountext;
     if (getNickName) username.value = getNickName;
     if (getRank) rank.value = getRank;
+    if (getLikeEnableButton === "true") {likeEnableButton.checked = true;} else {likeEnableButton.checked = false;}
 });
 
 window.addEventListener("load", function () {
