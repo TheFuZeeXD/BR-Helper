@@ -1,7 +1,7 @@
     let versionString = null;
     async function main() {
         versionString = await getVersion();
-        const myVersion = "1.4.3";
+        const myVersion = "1.4.4";
         const warning = document.querySelector(".newUpdate");
 
         if (warning) {

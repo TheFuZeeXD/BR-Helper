@@ -58,13 +58,21 @@
                         <option value="staff">Старший Состав</option>
                     </select>
                     <label>Выберите конфигурацию</label>
-                                    <div class="switch-container">
+                    <div class="switch-container">
                     <label class="switch">
                         <input type="checkbox" id="LikeEnableButton" checked>
                         <span class="slider round"></span>
                     </label>
                     <span style="user-select: none;">Включить Лайки</span>
                 </div>
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" id="paitingTextToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span style="user-select: none;">Включить Роспись</span>
+                    </div>
+                    <input type="text" placeholder="Введите Текст" id="paitingText" maxlength="200">
                     <!--<a id="conf_link" href="../web/home.html#awsner" target="_blank">Открыть Конфигурацию</a>-->
                 </form>
             </div>

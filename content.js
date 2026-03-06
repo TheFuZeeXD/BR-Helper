@@ -31,7 +31,9 @@ chrome.storage.local.get(["enableNickName"], (StatusNickName) => {
       chrome.storage.local.get(["Rank"], (getRank) => {
        chrome.storage.local.get(["Active"], (getActive) => {
         chrome.storage.local.get(["Rules"], (getRules) => {
-          chrome.storage.local.get(["LikeEnableButton"], (getLikeEnableButton) => {
+         chrome.storage.local.get(["paitingText"], (getPaitingText) => {
+          chrome.storage.local.get(["paitingTextToggle"], (getPaitingTextToggle) => {
+           chrome.storage.local.get(["LikeEnableButton"], (getLikeEnableButton) => {
                 const ServersList = getServersList.ServersList;
                 const backgroundURLbutton = getBackgroundURLtoggle.BackgroundURLbutton;
                 const active = getActive.Active;
@@ -39,6 +41,8 @@ chrome.storage.local.get(["enableNickName"], (StatusNickName) => {
                 const enableNickName = StatusNickName.enableNickName;
                 const enableRank = StatusRank.enableRank;
                 const permission = getRules.Rules;
+                const paitingTextToggle = getPaitingTextToggle.paitingTextToggle;
+                const paitingText = getPaitingText.paitingText;
                 let backgroundURL = getBackgroundURL.backgroundURL;
                 let nickname = getNickName.NickName;
                 let rang = getRank.Rank;
@@ -2721,6 +2725,8 @@ chrome.storage.local.get(["enableNickName"], (StatusNickName) => {
                     }
 
                     function addButtons() {
+                      const frElement = document.querySelector('.fr-element');
+                      let pElement = frElement.querySelector('p');
                       const replyContainer = document.querySelector('.button--icon--reply')?.parentElement;
                       const threadTitleContainer = document.querySelector('.p-title-value')?.parentElement;
                       if (!replyContainer) {
@@ -2728,6 +2734,17 @@ chrome.storage.local.get(["enableNickName"], (StatusNickName) => {
                         return;
                       }
 
+                      if (paitingTextToggle) { 
+                        const autoButton = createButton('Роспись', 'autoAnswer',
+                        'border-radius: 11px; margin-right: 8px; border: 2px solid; border-color: rgb(173, 252, 245);');
+                        threadTitleContainer.after(autoButton, document.querySelector('.label-append'));
+                        autoButton.addEventListener('click', () => {
+                          pElement.textContent = paitingText;
+                        document.querySelectorAll('.button--icon--reply').forEach(element => {
+                        element.click();
+                      });
+                      });
+                    }
 
                       const selectButton = createButton('Ответы', 'selectAnswer',
                         'border-radius: 11px; margin-right: 8px; border: 2px solid; border-color: rgb(255, 255, 255);');
@@ -2912,6 +2929,8 @@ chrome.storage.local.get(["enableNickName"], (StatusNickName) => {
       });
     });
   });
+});
+});
 });
 });
 });

@@ -186,7 +186,13 @@ body.light #conf_link:hover {
 }
 
 
+#paitingText {
+    display: none;
+}
 
+#paitingText.backgroundURL-Checked {
+    display: block;
+}
 .popup-header_container button {
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;

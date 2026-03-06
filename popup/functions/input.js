@@ -24,6 +24,12 @@ backgroundURLtext.addEventListener("input", function () {
     chrome.storage.local.set({ backgroundURL: ImagePath });
 });
 
+paitingText.addEventListener("input", function () {
+    const ImagePath = this.value;
+    localStorage.setItem("paitingText", ImagePath);
+    chrome.storage.local.set({ paitingText: ImagePath });
+});
+
 check.addEventListener("change", function () {
     if (this.checked) {
         localStorage.setItem("Active", true);
@@ -51,6 +57,19 @@ backgroundURL.addEventListener("change", function () {
         inputURL.classList.remove("backgroundURL-Checked");
         localStorage.setItem("BackgroundURLbutton", false);
         chrome.storage.local.set({ BackgroundURLbutton: false });
+    }
+});
+
+paitingTextToggle.addEventListener("change", function () {
+    const inputURL = document.querySelector("#paitingText");
+    if (this.checked) {
+        inputURL.classList.add("backgroundURL-Checked");
+        localStorage.setItem("paitingTextToggle", true);
+        chrome.storage.local.set({ paitingTextToggle: true });
+    } else {
+        inputURL.classList.remove("backgroundURL-Checked");
+        localStorage.setItem("paitingTextToggle", false);
+        chrome.storage.local.set({ paitingTextToggle: false });
     }
 });
 

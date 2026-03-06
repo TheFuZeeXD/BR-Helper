@@ -11,6 +11,8 @@ const customization = document.getElementById("popup-header-button_customization
 const credits = document.getElementById("popup-header-button_credits");
 const textElement = document.querySelector('#w-animation-typing-title');
 const likeEnableButton = document.querySelector("#LikeEnableButton");
+const paitingTextToggle = document.querySelector("#paitingTextToggle");
+const paitingText = document.querySelector("#paitingText");
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -143,12 +145,16 @@ window.addEventListener("load", function () {
     const getEnableNickName = localStorage.getItem("enableNickName");
     const getEnableRank = localStorage.getItem("enableRank");
     const getLikeEnableButton = localStorage.getItem("LikeEnableButton");
+    const getPaitingEnableButton = localStorage.getItem("paitingTextToggle");
+    const getPaitingText = localStorage.getItem("paitingText");
     if (getEnableNickName === "true") {enableNickName.checked = true; username.disabled = false;} else {username.disabled = true;}
     if (getEnableRank === "true") {enableRank.checked = true; rank.disabled = false;} else {rank.disabled = true;}
     if (getBackgrountext) backgroundURLtext.value = getBackgrountext;
+    if (getPaitingText) paitingText.value = getPaitingText;
     if (getNickName) username.value = getNickName;
     if (getRank) rank.value = getRank;
     if (getLikeEnableButton === "true") {likeEnableButton.checked = true;} else {likeEnableButton.checked = false;}
+    if (getPaitingEnableButton === "true") {paitingTextToggle.checked = true;} else {paitingTextToggle.checked = false;}
 });
 
 window.addEventListener("load", function () {
