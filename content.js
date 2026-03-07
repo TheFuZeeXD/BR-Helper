@@ -1,3 +1,5 @@
+
+
 (function () {
   'use strict';
 
@@ -18,22 +20,29 @@
   //       status: false,
   // WARNING! THIS IS const DONT WORK
 
-  // browser cookie
+
+  // Chrome cookie
 browser.storage.local.get(["enableNickName"], (StatusNickName) => {
-browser.storage.local.get(["enableRank"], (StatusRank) => {
+ browser.storage.local.get(["enableRank"], (StatusRank) => {
   browser.storage.local.get(["ServersList"], (getServersList) => {
+   browser.storage.local.get(["NickName"], (getNickName) => {
     browser.storage.local.get(["BackgroundURLbutton"], (getBackgroundURLtoggle) => {
-      browser.storage.local.get(["backgroundURL"], (getBackgroundURL) => {
-        browser.storage.local.get(["NickName"], (getNickName) => {
-          browser.storage.local.get(["Rank"], (getRank) => {
-            browser.storage.local.get(["Active"], (getActive) => {
-              browser.storage.local.get(["Rules"], (getRules) => {
+     browser.storage.local.get(["backgroundURL"], (getBackgroundURL) => {
+      browser.storage.local.get(["Rank"], (getRank) => {
+       browser.storage.local.get(["Active"], (getActive) => {
+        browser.storage.local.get(["Rules"], (getRules) => {
+         browser.storage.local.get(["paitingText"], (getPaitingText) => {
+          browser.storage.local.get(["paitingTextToggle"], (getPaitingTextToggle) => {
+           browser.storage.local.get(["LikeEnableButton"], (getLikeEnableButton) => {
                 const ServersList = getServersList.ServersList;
                 const backgroundURLbutton = getBackgroundURLtoggle.BackgroundURLbutton;
                 const active = getActive.Active;
+                const enabledLikeButton = getLikeEnableButton.LikeEnableButton;
                 const enableNickName = StatusNickName.enableNickName;
                 const enableRank = StatusRank.enableRank;
                 const permission = getRules.Rules;
+                const paitingTextToggle = getPaitingTextToggle.paitingTextToggle;
+                const paitingText = getPaitingText.paitingText;
                 let backgroundURL = getBackgroundURL.backgroundURL;
                 let nickname = getNickName.NickName;
                 let rang = getRank.Rank;
@@ -65,14 +74,16 @@ browser.storage.local.get(["enableRank"], (StatusRank) => {
                 if (backgroundURLbutton != true) {
                   const elements = document.querySelectorAll('.p-nav, .p-header, .block-container, .p-footer, .button.button--cta, .buttonGroup, .button--scroll, .p-nav-inner, .p-sectionLinks, .pageNav-main, .pageNav-jump, .tabPanes, .menu-content, .overlay, .p-body-header, .p-title-value, .block-minorHeader');
                   elements.forEach(el => {
-                    el.style.opacity = "1";
+                    el.style.opacity = '1';
                   });
                   backgroundURL = null;
-                }
+                } 
+                const style = document.createElement("style");
+                style.textContent = ` :root {
+                    --BageURL: url(${backgroundURL});
+                  }`;
+                  document.documentElement.appendChild(style);
 
-                // Background
-                const pageWrapper = document.querySelector('.p-pageWrapper');
-                pageWrapper.style.setProperty('--BageURL', `url("${backgroundURL}")`);
 
                 // if forum.blackrussia.online
                 if (window.location.href.includes('https://forum.blackrussia.online/threads/')) {
@@ -2714,19 +2725,44 @@ browser.storage.local.get(["enableRank"], (StatusRank) => {
                     }
 
                     function addButtons() {
+                      const frElement = document.querySelector('.fr-element');
+                      let pElement = frElement.querySelector('p');
                       const replyContainer = document.querySelector('.button--icon--reply')?.parentElement;
+                      const threadTitleContainer = document.querySelector('.p-title-value')?.parentElement;
                       if (!replyContainer) {
                         setTimeout(addButtons, 500);
                         return;
                       }
 
+                      if (paitingTextToggle) { 
+                        const autoButton = createButton('Роспись', 'autoAnswer',
+                        'border-radius: 11px; margin-right: 8px; border: 2px solid; border-color: rgb(173, 252, 245);');
+                        threadTitleContainer.after(autoButton, document.querySelector('.label-append'));
+                        autoButton.addEventListener('click', () => {
+                          pElement.textContent = paitingText;
+                        document.querySelectorAll('.button--icon--reply').forEach(element => {
+                        element.click();
+                      });
+                      });
+                    }
+
                       const selectButton = createButton('Ответы', 'selectAnswer',
                         'border-radius: 11px; margin-right: 8px; border: 2px solid; border-color: rgb(255, 255, 255);');
-
-                      replyContainer.insertBefore(selectButton, document.querySelector('.button--icon--reply'));
+                      if (enabledLikeButton) { 
+                        const LikeButton = createButton('Лайк', 'likeAnswer',
+                        'border-radius: 11px; margin-right: 8px; border: 2px solid; border-color: rgb(104, 255, 242);');
+                        threadTitleContainer.after(LikeButton, document.querySelector('.label-append'));
+                        LikeButton.addEventListener('click', () => {
+                        document.querySelectorAll('a[data-reaction-id="1"]').forEach(element => {
+                        element.click();
+                      });
+                      });
+                      }
+                        replyContainer.insertBefore(selectButton, document.querySelector('.button--icon--reply'));
                       selectButton.addEventListener('click', () => {
                         showAnswersModal();
                       });
+
                     }
 
                     function createButton(text, id, style) {
@@ -2893,6 +2929,9 @@ browser.storage.local.get(["enableRank"], (StatusRank) => {
       });
     });
   });
+});
+});
+});
 });
 });
 })();

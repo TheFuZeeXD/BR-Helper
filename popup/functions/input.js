@@ -24,6 +24,12 @@ backgroundURLtext.addEventListener("input", function () {
     browser.storage.local.set({ backgroundURL: ImagePath });
 });
 
+paitingText.addEventListener("input", function () {
+    const ImagePath = this.value;
+    localStorage.setItem("paitingText", ImagePath);
+    browser.storage.local.set({ paitingText: ImagePath });
+});
+
 check.addEventListener("change", function () {
     if (this.checked) {
         localStorage.setItem("Active", true);
@@ -54,6 +60,31 @@ backgroundURL.addEventListener("change", function () {
     }
 });
 
+paitingTextToggle.addEventListener("change", function () {
+    const inputURL = document.querySelector("#paitingText");
+    if (this.checked) {
+        inputURL.classList.add("backgroundURL-Checked");
+        localStorage.setItem("paitingTextToggle", true);
+        browser.storage.local.set({ paitingTextToggle: true });
+    } else {
+        inputURL.classList.remove("backgroundURL-Checked");
+        localStorage.setItem("paitingTextToggle", false);
+        browser.storage.local.set({ paitingTextToggle: false });
+    }
+});
+
+
+likeEnableButton.addEventListener("change", function () {
+    if (this.checked) {
+        localStorage.setItem("LikeEnableButton", true);
+        username.disabled = false;
+        browser.storage.local.set({ LikeEnableButton: true });
+    } else {
+        localStorage.setItem("LikeEnableButton", false);
+        username.disabled = true;
+        browser.storage.local.set({ LikeEnableButton: false });
+    }
+});
 
 enableNickName.addEventListener("change", function () {
     if (this.checked) {
@@ -99,7 +130,7 @@ enableRank.addEventListener("change", function () {
                 updateServersList();
                 toggleAllBtn.textContent = 'Выбрать все';
             } else {
-                toggleAllBtn.textContent = 'Выбрать все / Снять все';
+                toggleAllBtn.textContent = 'Выбрать все';
             }
         }
         

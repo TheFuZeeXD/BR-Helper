@@ -10,6 +10,9 @@ const settings = document.getElementById("popup-header-button_settings");
 const customization = document.getElementById("popup-header-button_customization");
 const credits = document.getElementById("popup-header-button_credits");
 const textElement = document.querySelector('#w-animation-typing-title');
+const likeEnableButton = document.querySelector("#LikeEnableButton");
+const paitingTextToggle = document.querySelector("#paitingTextToggle");
+const paitingText = document.querySelector("#paitingText");
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -54,33 +57,33 @@ document.addEventListener('DOMContentLoaded', function () {
         backgroundURLtext.classList.add("backgroundURL-Checked");
     }
 
-    browser.storage.sync.get(['enabled'], function (result) {
+    chrome.storage.sync.get(['enabled'], function (result) {
         toggle.checked = result.enabled !== false;
     });
 
 
     toggle.addEventListener('change', function () {
-        browser.storage.sync.set({ enabled: this.checked });
+        chrome.storage.sync.set({ enabled: this.checked });
     });
 
     // backgroundURL backgroundURLtext
-    browser.storage.sync.get(['disabled'], function (result) {
+    chrome.storage.sync.get(['disabled'], function (result) {
         backgroundURL.checked = result.disabled !== false;
     });
 
 
     backgroundURL.addEventListener('change', function () {
-        browser.storage.sync.set({ disabled: this.checked });
+        chrome.storage.sync.set({ disabled: this.checked });
     });
 
     // themer
-    browser.storage.sync.get(['themer'], function (result) {
+    chrome.storage.sync.get(['themer'], function (result) {
         themer.checked = result.themer !== false;
     });
 
 
     themer.addEventListener('change', function () {
-        browser.storage.sync.set({ themer: this.checked });
+        chrome.storage.sync.set({ themer: this.checked });
     });
 
     if (localStorage.getItem("Themer") == "true") {
@@ -114,7 +117,7 @@ function     updateServersList() {
         document.querySelectorAll('.multi-select input[type="checkbox"]:not(:checked)')
     ).map(checkbox => checkbox.value);
 
-    browser.storage.local.set({ ServersList: serverValues });
+    chrome.storage.local.set({ ServersList: serverValues });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -141,11 +144,17 @@ window.addEventListener("load", function () {
     const getBackgrountext = localStorage.getItem("backgroundURL");
     const getEnableNickName = localStorage.getItem("enableNickName");
     const getEnableRank = localStorage.getItem("enableRank");
+    const getLikeEnableButton = localStorage.getItem("LikeEnableButton");
+    const getPaitingEnableButton = localStorage.getItem("paitingTextToggle");
+    const getPaitingText = localStorage.getItem("paitingText");
     if (getEnableNickName === "true") {enableNickName.checked = true; username.disabled = false;} else {username.disabled = true;}
     if (getEnableRank === "true") {enableRank.checked = true; rank.disabled = false;} else {rank.disabled = true;}
     if (getBackgrountext) backgroundURLtext.value = getBackgrountext;
+    if (getPaitingText) paitingText.value = getPaitingText;
     if (getNickName) username.value = getNickName;
     if (getRank) rank.value = getRank;
+    if (getLikeEnableButton === "true") {likeEnableButton.checked = true;} else {likeEnableButton.checked = false;}
+    if (getPaitingEnableButton === "true") {paitingTextToggle.checked = true;} else {paitingTextToggle.checked = false;}
 });
 
 window.addEventListener("load", function () {

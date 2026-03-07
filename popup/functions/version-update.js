@@ -1,7 +1,7 @@
     let versionString = null;
     async function main() {
         versionString = await getVersion();
-        const myVersion = "1.4.3";
+        const myVersion = "1.4.4";
         const warning = document.querySelector(".newUpdate");
 
         if (warning) {
@@ -10,7 +10,7 @@
     }
     async function getVersion() {
         try {
-            const apiUrl = 'https://api.github.com/repos/TheFuZeeXD/BR-Helper/contents/manifest.json?ref=chrome';
+            const apiUrl = 'https://api.github.com/repos/TheFuZeeXD/BR-Helper/contents/manifest.json?ref=FireFox';
             const response = await fetch(apiUrl);
             const data = await response.json();
 
