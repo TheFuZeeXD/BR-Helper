@@ -18,15 +18,15 @@
   ],
   "content_scripts": [
     {
-      "matches": [
-        "https://forum.blackrussia.online/*"
-      ],
-      "js": [
-        "content.js"
-      ],
-      "css": [
-        "content.css"
-      ]
+      "matches": ["https://forum.blackrussia.online/*"],
+      "js": ["theme.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://forum.blackrussia.online/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
     }
   ],
   "content_security_policy": {
