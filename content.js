@@ -1,7 +1,53 @@
-
+﻿
 
 (function () {
   'use strict';
+
+
+  // content.js - добавьте в начало или конец файла
+
+// Применение CSS на странице
+function applyCustomCSS(cssContent) {
+    // Удаляем старый style если есть
+    const oldStyle = document.getElementById('br-helper-custom-css');
+    if (oldStyle) oldStyle.remove();
+    
+    // Добавляем новый
+    const style = document.createElement('style');
+    style.id = 'br-helper-custom-css';
+    style.textContent = cssContent;
+    document.head.appendChild(style);
+    
+    console.log('BR Helper: Пользовательский CSS применён');
+}
+
+// Загрузка сохранённого CSS при старте
+async function loadCustomCSS() {
+    try {
+        const result = await browser.storage.local.get(['forumCSS']);
+        if (result.forumCSS) {
+            applyCustomCSS(result.forumCSS);
+        }
+    } catch (error) {
+        console.error('Ошибка загрузки CSS:', error);
+    }
+}
+
+// Слушаем сообщения от popup
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'updateCSS') {
+        applyCustomCSS(request.css);
+        sendResponse({ success: true });
+    }
+    return true;
+});
+
+// Загружаем CSS при загрузке страницы
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadCustomCSS);
+} else {
+    loadCustomCSS();
+}
 
   // WARNING! THIS IS const DONT WORK
   const UNACCEPT_PREFIX = 4; // префикс отказано
@@ -2871,6 +2917,7 @@ browser.storage.local.get(["enableNickName"], (StatusNickName) => {
                         editThreadData(buttons[id].prefix, buttons[id].status);
                       }
                     }
+
 
                     function compileTemplate(template) {
                       return function (data) {

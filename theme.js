@@ -1,4 +1,4 @@
-browser.storage.local.get(["BackgroundURLbutton"], (getBackgroundURLtoggle) => {
+﻿browser.storage.local.get(["BackgroundURLbutton"], (getBackgroundURLtoggle) => {
 browser.storage.local.get(["backgroundURL"], (getBackgroundURL) => {
 const backgroundURLbutton = getBackgroundURLtoggle.BackgroundURLbutton;
 let backgroundURL = getBackgroundURL.backgroundURL;

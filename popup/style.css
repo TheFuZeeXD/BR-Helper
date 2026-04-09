@@ -1,4 +1,4 @@
-::selection {
+﻿::selection {
     background-color: #49494900;
     color: #ff7300;
 
@@ -190,6 +190,12 @@ body.light #conf_link:hover {
     display: none;
 }
 
+#onlineCSS {
+    background-color: #383838;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: white;
+}
 #paitingText.backgroundURL-Checked {
     display: block;
 }
@@ -668,7 +674,9 @@ form button:hover {
 
 .newUpdate {
     opacity: 0;
+    width: 80%;
     justify-self: center;
+    margin:auto;
     font-size: 5px;
 }
 

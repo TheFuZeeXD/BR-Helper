@@ -1,8 +1,8 @@
-{
+﻿{
   "manifest_version": 3,
   "name": "BR Helper | Скрипт для Форума",
-  "version": "1.4.5",
-  "description": "Black Russia Helper — это расширение специально разработанное для веб-браузера FireFox, разработанное для автоматизации ответов на темы форума forum.blackrussia.online. Оно значительно упрощает взаимодействие с форумом, позволяя автоматически вставлять шаблоны сообщений, ускорять модерацию, обработку заявок и выполнение других рутинных действий.",
+  "version": "1.4.6",
+  "description": "Black Russia Helper — это расширение специально разработанное для веб-браузера FireFox...",
   "browser_specific_settings": {
     "gecko": {
       "id": "br-helper@blackrussia.online",
@@ -18,20 +18,18 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://forum.blackrussia.online/*"],
-      "js": ["theme.js"],
-      "css": ["content.css"],
+      "matches": [ "https://forum.blackrussia.online/*" ],
+      "js": [ "theme.js" ],
+      "css": [ "content.css", "style.css" ],
       "run_at": "document_start"
     },
     {
-      "matches": ["https://forum.blackrussia.online/*"],
-      "js": ["content.js"],
+      "matches": [ "https://forum.blackrussia.online/*" ],
+      "js": [ "content.js", "widget.js" ],
+      "css": [ "widget.css" ],
       "run_at": "document_idle"
     }
   ],
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  },
   "icons": {
     "128": "/image/icon128.png"
   },

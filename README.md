@@ -1,4 +1,4 @@
-# Black Russia Helper
+﻿# Black Russia Helper
 
 **Black Russia Helper** — это расширение для Браузеров FireFox, разработанное как автоответчик на форуме [forum.blackrussia.online](https://forum.blackrussia.online). Оно обеспечивает быстрые и удобные шаблоны ответов для пользователей, активно работающих на форуме.
 

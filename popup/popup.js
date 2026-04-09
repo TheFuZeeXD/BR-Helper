@@ -1,4 +1,4 @@
-const username = document.querySelector('#NickName');
+﻿const username = document.querySelector('#NickName');
 const rank = document.querySelector("#Rank");
 const myrules = document.querySelector("#rules");
 const check = document.querySelector("#extensionToggle");
