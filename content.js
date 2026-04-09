@@ -4,15 +4,10 @@
   'use strict';
 
 
-  // content.js - добавьте в начало или конец файла
-
-// Применение CSS на странице
 function applyCustomCSS(cssContent) {
-    // Удаляем старый style если есть
     const oldStyle = document.getElementById('br-helper-custom-css');
     if (oldStyle) oldStyle.remove();
     
-    // Добавляем новый
     const style = document.createElement('style');
     style.id = 'br-helper-custom-css';
     style.textContent = cssContent;
@@ -21,7 +16,6 @@ function applyCustomCSS(cssContent) {
     console.log('BR Helper: Пользовательский CSS применён');
 }
 
-// Загрузка сохранённого CSS при старте
 async function loadCustomCSS() {
     try {
         const result = await browser.storage.local.get(['forumCSS']);
@@ -33,7 +27,6 @@ async function loadCustomCSS() {
     }
 }
 
-// Слушаем сообщения от popup
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'updateCSS') {
         applyCustomCSS(request.css);
@@ -42,7 +35,6 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     return true;
 });
 
-// Загружаем CSS при загрузке страницы
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadCustomCSS);
 } else {
