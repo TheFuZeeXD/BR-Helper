@@ -20,7 +20,7 @@
     {
       "matches": [ "https://forum.blackrussia.online/*" ],
       "js": [ "theme.js" ],
-      "css": [ "content.css", "style.css" ],
+      "css": [ "content.css" ],
       "run_at": "document_start"
     },
     {
