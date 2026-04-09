@@ -1,7 +1,42 @@
-
-
 (function () {
   'use strict';
+
+function applyCustomCSS(cssContent) {
+    const oldStyle = document.getElementById('br-helper-custom-css');
+    if (oldStyle) oldStyle.remove();
+    
+    const style = document.createElement('style');
+    style.id = 'br-helper-custom-css';
+    style.textContent = cssContent;
+    document.head.appendChild(style);
+    
+    console.log('BR Helper: Пользовательский CSS применён');
+}
+
+async function loadCustomCSS() {
+    try {
+        const result = await chrome.storage.local.get(['forumCSS']);
+        if (result.forumCSS) {
+            applyCustomCSS(result.forumCSS);
+        }
+    } catch (error) {
+        console.error('Ошибка загрузки CSS:', error);
+    }
+}
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'updateCSS') {
+        applyCustomCSS(request.css);
+        sendResponse({ success: true });
+    }
+    return true;
+});
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadCustomCSS);
+} else {
+    loadCustomCSS();
+}
 
   // WARNING! THIS IS const DONT WORK
   const UNACCEPT_PREFIX = 4; // префикс отказано
