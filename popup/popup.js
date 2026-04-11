@@ -1,5 +1,7 @@
 ﻿const username = document.querySelector('#NickName');
 const rank = document.querySelector("#Rank");
+const banner1IMG = document.querySelector("#banner1IMG");
+const banner2IMG = document.querySelector("#banner2IMG");
 const myrules = document.querySelector("#rules");
 const check = document.querySelector("#extensionToggle");
 const backgroundURL = document.querySelector("#backgroundURL-Toggle");
@@ -7,6 +9,7 @@ const MainBody = document.querySelector("#TitleText");
 const backgroundURLtext = document.querySelector("#backgroundURL");
 const managment = document.getElementById("popup-header-button_managment");
 const settings = document.getElementById("popup-header-button_settings");
+const setup = document.getElementById("popup-header-button_setup");
 const customization = document.getElementById("popup-header-button_customization");
 const credits = document.getElementById("popup-header-button_credits");
 const textElement = document.querySelector('#w-animation-typing-title');
@@ -28,6 +31,19 @@ const enableNickName = document.getElementById('enableNickName');
 let allSelected = false;        
 
 
+const buttonLoadbanner1 = document.getElementById('button-loadbanner1');
+        buttonLoadbanner1.addEventListener('click', () => {
+            banner1IMG.value = 'https://i.postimg.cc/mrhcH5vR/1621526767066.png';
+            localStorage.setItem("banner1IMG", banner1IMG.value);
+            browser.storage.local.set({ banner1IMG: banner1IMG.value });
+        });
+
+const buttonLoadbanner2 = document.getElementById('button-loadbanner2');
+        buttonLoadbanner2.addEventListener('click', () => {
+            banner2IMG.value = 'https://i.postimg.cc/tgD5Xwhj/1618083711121.png';
+            localStorage.setItem("banner2IMG", banner2IMG.value);
+            browser.storage.local.set({ banner2IMG: banner2IMG.value });
+        });
 
 class BRhelper {
      loadModule() {
@@ -143,6 +159,8 @@ window.addEventListener("load", function () {
     const getRank = localStorage.getItem("Rank");
     const getBackgrountext = localStorage.getItem("backgroundURL");
     const getEnableNickName = localStorage.getItem("enableNickName");
+    const getBanner1 = localStorage.getItem("banner1IMG");
+    const getBanner2 = localStorage.getItem("banner2IMG");
     const getEnableRank = localStorage.getItem("enableRank");
     const getLikeEnableButton = localStorage.getItem("LikeEnableButton");
     const getPaitingEnableButton = localStorage.getItem("paitingTextToggle");
@@ -153,6 +171,8 @@ window.addEventListener("load", function () {
     if (getPaitingText) paitingText.value = getPaitingText;
     if (getNickName) username.value = getNickName;
     if (getRank) rank.value = getRank;
+    if (getBanner1) banner1IMG.value = getBanner1;
+    if (getBanner2) banner2IMG.value = getBanner2;
     if (getLikeEnableButton === "true") {likeEnableButton.checked = true;} else {likeEnableButton.checked = false;}
     if (getPaitingEnableButton === "true") {paitingTextToggle.checked = true;} else {paitingTextToggle.checked = false;}
 });

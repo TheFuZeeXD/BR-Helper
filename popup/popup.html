@@ -16,6 +16,7 @@
             <div class="popup-header_container">
                 <button id="popup-header-button_managment" class="activePage">🕹️</button>
                 <button id="popup-header-button_settings">🛠️</button>
+                <button id="popup-header-button_setup">🧰</button>
                 <button id="popup-header-button_customization">🎀</button>
                 <button id="popup-header-button_credits">🏷️</button>
             </div>
@@ -58,6 +59,12 @@
                         <option value="staff">Старший Состав</option>
                     </select>
                     <label>Выберите конфигурацию</label>
+                </form>
+                <a href="../web/index.html" id="onlineCSS" target="_blank">Открыть OnlineCSS</a>
+            </div>
+                        <div id="Screen-Chrome-Exst_setup">
+                <h4>Сетап</h4>
+                <form>
                     <div class="switch-container">
                         <label class="switch">
                             <input type="checkbox" id="LikeEnableButton" checked>
@@ -73,29 +80,8 @@
                         <span style="user-select: none;">Включить Роспись</span>
                     </div>
                     <input type="text" placeholder="Введите Текст" id="paitingText" maxlength="200">
-                </form>
-                <a href="../web/index.html" id="onlineCSS" target="_blank">Открыть OnlineCSS</a>
-            </div>
-            <div id="Screen-Chrome-Exst_customization">
-        <h4>Кастомизация</h4>
-                <form>
-                    <div class="switch-container">
-                        <label class="switch">
-                            <input type="checkbox" id="Theme-color">
-                            <span class="slider round"></span>
-                        </label>
-                        <span style="user-select: none;">Светлая/Темная тема BRH</span>
-                    </div>
-
-                    <div class="switch-container">
-                        <label class="switch">
-                            <input type="checkbox" id="backgroundURL-Toggle">
-                            <span class="slider round"></span>
-                        </label>
-                        <span style="user-select: none;">Кастомный Background</span>
-                    </div>
-                    <input type="text" placeholder="Укажите URL" id="backgroundURL" maxlength="300">
-                    <p>Выберите отображаемые сервера</p>
+                
+  <p>Выберите отображаемые сервера</p>
                     <div class="multi-select">
                         <label><input type="checkbox" value="node--id18" checked>Сервер Red | 01</label>
                         <label><input type="checkbox" value="node--id19" checked>Сервер Green | 02</label>
@@ -197,6 +183,7 @@
                         <label><input type="checkbox" value="node--id3913" checked>Сервер Magadan | 88</label>
                         <label><input type="checkbox" value="node--id3948" checked>Сервер Cherepovets | 89</label>
                         <label><input type="checkbox" value="node--id3986" checked>Сервер Norilsk | 90</label>
+                        <label><input type="checkbox" value="node--id4022" checked>Сервер Astana | 91</label>
                     </div>
                 </form>
         <button id="toggleAllBtn">
@@ -205,6 +192,35 @@
                 <div class="status" id="status">
             Выбрано: 0 из 5
         </div>
+            </div>
+            <div id="Screen-Chrome-Exst_customization">
+        <h4>Кастомизация</h4>
+                <form>
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" id="Theme-color">
+                            <span class="slider round"></span>
+                        </label>
+                        <span style="user-select: none;">Светлая/Темная тема BRH</span>
+                    </div>
+
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" id="backgroundURL-Toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span style="user-select: none;">Кастомный Background</span>
+                    </div>
+                    <input type="text" placeholder="Укажите URL" id="backgroundURL" maxlength="300">
+                    <div id="bannerContainer">
+                    <label>Баннер 1</label>
+                    <input type="text"  id="banner1IMG" maxlength="500">
+                    <button type="button" id="button-loadbanner1" class="button-default">по умолчанию</button>
+                    <label>Баннер 2</label>
+                    <input type="text"  id="banner2IMG" maxlength="500">
+                    <button type="button" id="button-loadbanner2" class="button-default">по умолчанию</button>
+                </div>
+                </form>
             </div>
             <div id="Screen-Chrome-Exst_credits">
                 <h2>Разработчики</h2>

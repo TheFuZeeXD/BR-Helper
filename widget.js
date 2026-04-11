@@ -195,7 +195,7 @@
                     e.preventDefault();
                     const url = btn.getAttribute('data-url');
                     if (url) {
-                        window.open(url, '_blank');
+                        window.open(url, '_self ');
                     }
                 });
             });
