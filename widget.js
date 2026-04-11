@@ -145,8 +145,8 @@
 
         async loadLinks() {
             try {
-                if (typeof browser !== 'undefined' && browser.storage && browser.storage.local) {
-                    const result = await browser.storage.local.get(this.storageKey);
+                if (typeof browser !== 'undefined' && chrome.storage && chrome.storage.local) {
+                    const result = await chrome.storage.local.get(this.storageKey);
                     this.links = result[this.storageKey] || [];
                 } else if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
                     const result = await new Promise((resolve) => {
@@ -165,8 +165,8 @@
 
         async saveLinks() {
             try {
-                if (typeof browser !== 'undefined' && browser.storage && browser.storage.local) {
-                    await browser.storage.local.set({ [this.storageKey]: this.links });
+                if (typeof browser !== 'undefined' && chrome.storage && chrome.storage.local) {
+                    await chrome.storage.local.set({ [this.storageKey]: this.links });
                 } else if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
                     await new Promise((resolve) => {
                         chrome.storage.local.set({ [this.storageKey]: this.links }, resolve);
@@ -195,7 +195,7 @@
                     e.preventDefault();
                     const url = btn.getAttribute('data-url');
                     if (url) {
-                        window.open(url, '_blank');
+                        window.open(url, '_self ');
                     }
                 });
             });

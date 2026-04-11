@@ -13,6 +13,16 @@ username.addEventListener("input", function () {
     chrome.storage.local.set({ NickName: this.value });
 });
 
+banner1IMG.addEventListener("input", function () {
+    localStorage.setItem("banner1IMG", this.value);
+    chrome.storage.local.set({ banner1IMG: this.value });
+});
+
+banner2IMG.addEventListener("input", function () {
+    localStorage.setItem("banner2IMG", this.value);
+    chrome.storage.local.set({ banner2IMG: this.value });
+});
+
 rank.addEventListener("input", function () {
     localStorage.setItem("Rank", this.value);
     chrome.storage.local.set({ Rank: this.value });

@@ -223,7 +223,9 @@ background-color: #f85c24;
 #popup-header-button_settings.activePage {
     background-color: #f85c24;
 }
-
+#popup-header-button_setup.activePage  {
+    background-color: #f85c24;
+}
 #popup-header-button_customization.activePage {
     background-color: #f85c24;
 }
@@ -274,6 +276,9 @@ background-color: #f85c24;
     display: none;
 }
 
+#Screen-Chrome-Exst_setup {
+    display: none;
+}
 #Screen-Chrome-Exst_credits {
     display: none;
 }
@@ -488,6 +493,19 @@ form button:hover {
     margin-top: 15px;
 }
 
+#bannerContainer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-default:active {
+    transition: all 0.1s;
+    background-color: #fc770b;
+    color: white;
+}
 #backgroundURL.backgroundURL-Checked {
     display: block;
 }
@@ -674,9 +692,10 @@ form button:hover {
 
 .newUpdate {
     opacity: 0;
-    width: auto;
+    width: 80%;
     justify-self: center;
-    margin:auto;
+    display: flex;
+    justify-content: center;
     font-size: 5px;
 }
 
@@ -689,7 +708,7 @@ form button:hover {
     width: 100px;
 }
 
-#Screen-Chrome-Exst_house, #Screen-Chrome-Exst_settings, #Screen-Chrome-Exst_customization, #Screen-Chrome-Exst_credits {
+#Screen-Chrome-Exst_house, #Screen-Chrome-Exst_settings, #Screen-Chrome-Exst_setup, #Screen-Chrome-Exst_customization, #Screen-Chrome-Exst_credits {
     animation: fadeIn 0.3s both;
 }
 
