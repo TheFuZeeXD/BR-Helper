@@ -1,4 +1,4 @@
-﻿(function () {
+﻿﻿(function () {
   'use strict';
 
 
@@ -81,6 +81,7 @@ browser.storage.local.get(["enableNickName"], (StatusNickName) => {
                 const permission = getRules.Rules;
                 const paitingTextToggle = getPaitingTextToggle.paitingTextToggle;
                 const paitingText = getPaitingText.paitingText;
+                const stats = true;
                 let backgroundURL = getBackgroundURL.backgroundURL;
                 let nickname = getNickName.NickName;
                 let rang = getRank.Rank;
@@ -102,12 +103,239 @@ browser.storage.local.get(["enableNickName"], (StatusNickName) => {
                 }
 
                 // Delete ServersList elements 
+                if (document.URL.includes('https://forum.blackrussia.online/')) {
                 ServersList.forEach(className => {
                   const elementsToRemove = document.querySelectorAll(`.${CSS.escape(className)}`);
                   elementsToRemove.forEach(element => {
                     element.remove();
                   });
-                });
+                });}
+
+                               if (document.URL.includes('/forums/') && stats === true) {
+                                    statsViev();
+                                    timeoutThread();
+                               }
+                      
+
+                function statsViev() {
+                    const targetLabels = {
+                        'Специальному администратору': 'Спец.Адм',
+                        'Главному администратору': 'ГА',
+                        'Тех. специалисту': 'Тех Спец',
+                        'Руководству модерации': 'РМ',
+                        'Команде проекта': 'КП'
+                    };
+
+                    const counts = {
+                        'Спец.Адм': 0,
+                        'ГА': 0,
+                        'Тех Спец': 0,
+                        'РМ': 0,
+                        'КП': 0,
+                        'На Рассмотрении': 0,
+                        'Ожидание': 0
+                    };
+                    
+                    const threads = document.querySelectorAll('.structItem--thread');
+                    
+                    threads.forEach(thread => {
+                              if (thread.classList.contains('is-deleted')) {
+                            return; 
+                        }
+
+                        const labels = thread.querySelectorAll('.label');
+                        
+                        labels.forEach(label => {
+                            const labelText = label.textContent.trim();
+                            
+                            if (targetLabels[labelText]) {
+                                counts[targetLabels[labelText]]++;
+                            }
+                            
+                            if (labelText === 'На рассмотрении') {
+                                counts['На Рассмотрении']++;
+                            }
+                            if (labelText === 'Ожидание') {
+                                counts['Ожидание']++;
+                            }
+                        });
+                    });
+                    
+                    const displayText = `Спец.Адм: ${counts['Спец.Адм']}, ` +
+                                      `ГА: ${counts['ГА']}, ` +
+                                      `КП: ${counts['КП']}, ` +
+                                      `Тех Спец: ${counts['Тех Спец']}, ` +
+                                      `РМ: ${counts['РМ']}, ` +
+                                      `На Рассмотрении: ${counts['На Рассмотрении']}, ` +
+                                      `Ожидание: ${counts['Ожидание']}`;
+                    
+                    console.log('Результат подсчета:', displayText);
+                    console.log('Детали:', counts);
+                    
+                    const statsBlock = document.createElement('div');
+                    statsBlock.style.cssText = 'margin-left:10px;color: #aae3ff; font-size: 10px; margin-top: 5px; padding: 5px; background: rgba(0,0,0,0.3); border-radius: 5px;';
+                    statsBlock.innerHTML = `<h1 style="font-size: 12px; margin: 0; padding: 0;">📊 ${displayText}</h1>`;
+                    statsBlock.className = 'custom-stats-block';
+                    
+                    let targetHeader = document.querySelector('.block-minorHeader');
+                    
+                    if (targetHeader) {
+                        const oldBlock = targetHeader.querySelector('.custom-stats-block');
+                        if (oldBlock) oldBlock.remove();
+                        targetHeader.appendChild(statsBlock);
+                    } else {
+                        console.error('Элемент .block-minorHeader не найден');
+                    }
+                    
+                    return counts;
+                                              }
+
+
+                function timeoutThread() {
+                    function parseDate(dateStr) {
+                        const match = dateStr.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})([+-])(\d{2})(\d{2})/);
+                        if (!match) return new Date(dateStr);
+                        
+                        const [, year, month, day, hour, minute, second, sign, tzHour, tzMin] = match;
+                        
+                        const date = new Date(Date.UTC(
+                            parseInt(year), parseInt(month) - 1, parseInt(day),
+                            parseInt(hour), parseInt(minute), parseInt(second)
+                        ));
+                        
+                        const tzOffset = (parseInt(tzHour) * 60 + parseInt(tzMin)) * 60 * 1000;
+                        if (sign === '+') {
+                            date.setTime(date.getTime() - tzOffset);
+                        } else {
+                            date.setTime(date.getTime() + tzOffset);
+                        }
+                        
+                        return date;
+                    }
+                    
+                    function getThreadCreateDate(thread) {
+                        let createDateElement = thread.querySelector(".structItem-startDate");
+                        
+                        if (!createDateElement) {
+                            createDateElement = thread.querySelector(".structItem-cell--main time");
+                        }
+                        if (!createDateElement) {
+                            createDateElement = thread.querySelector(".structItem-title + .structItem-secondary time");
+                        }
+                        
+                        if (createDateElement) {
+                            const datetime = createDateElement.getAttribute("datetime");
+                            if (datetime) return parseDate(datetime);
+                        }
+                        
+                        const latestDateElement = thread.querySelector(".structItem-latestDate");
+                        if (latestDateElement) {
+                            const datetime = latestDateElement.getAttribute("datetime");
+                            if (datetime) return parseDate(datetime);
+                        }
+                        
+                        return null;
+                    }
+                    
+                    function processThreads() {
+                        let Timeout;
+                        const pageTitle = document.querySelector(".p-title-value");
+                        const titleText = pageTitle ? pageTitle.textContent.trim() : "";
+                        
+                        if (titleText === "Жалобы на администрацию" || titleText === "Жалобы на лидеров") {
+                            Timeout = 48;
+                        } else if (titleText === "Обжалование наказаний" || titleText === "Жалобы на игроков") {
+                            Timeout = 72;
+                        } else {
+                            Timeout = 48;
+                        }
+                        
+                        function formatRemainingTime(hours) {
+                            const absHours = Math.abs(hours);
+                            const totalMinutes = Math.floor(absHours * 60);
+                            const h = Math.floor(totalMinutes / 60);
+                            const m = totalMinutes % 60;
+                            return `${h}ч ${m}м`;
+                        }
+                        
+                        const threads = document.querySelectorAll(".structItem--thread:has(.label--silver)");
+                        
+                        
+                        threads.forEach((thread, index) => {
+                                  if (thread.classList.contains('is-deleted')) {
+                            return;
+                        }
+                            const createDate = getThreadCreateDate(thread);
+                            
+                            if (!createDate) {
+                                console.log(`Тема ${index + 1}: дата создания не найдена`);
+                                return;
+                            }
+                            
+                            const now = new Date();
+                            const diffHours = (now - createDate) / (1000 * 60 * 60);
+
+
+                            const oldTimeBlock = thread.querySelector(".custom-time-block");
+                            if (oldTimeBlock) oldTimeBlock.remove();
+                            
+                            if (diffHours >= Timeout) {
+                                thread.style.backgroundColor = "#ff0000";
+                                thread.style.background = "#ff0000";
+                                
+                                const timeBlock = document.createElement("div");
+                                timeBlock.className = "custom-time-block";
+                                timeBlock.style.cssText = "width: auto;padding: 1px 14px;background: #232a2b;height: 23px;display: flex;justify-content: center;align-items: center;border-radius: 30px;font-family: roboto;font-weight: 800;color: #ff4d4d;margin-left: 10px;";
+                                
+                                const timeParagraph = document.createElement("p");
+                                timeParagraph.style.cssText = "display: block;height: auto;padding: 0px;margin: 0px;";
+                                const overdueHours = diffHours - Timeout;
+                                
+                                if (overdueHours < 1) {
+                                    timeParagraph.textContent = `❗ Просрочено!`;
+                                } else {
+                                    timeParagraph.textContent = `❗ Просрочено на: ${formatRemainingTime(overdueHours)}`;
+                                }
+                                
+                                timeBlock.appendChild(timeParagraph);
+                                
+                                let targetElement = thread.querySelector(".structItem-minor");
+                                if (targetElement) {
+                                    targetElement.appendChild(timeBlock);
+                                } else {
+                                    thread.appendChild(timeBlock);
+                                }
+                            } else {
+                                thread.style.backgroundColor = "";
+                                thread.style.background = "";
+                                
+                                const remainingHours = Timeout - diffHours;
+                                const remainingText = formatRemainingTime(remainingHours);
+                                
+                                const timeBlock = document.createElement("div");
+                                timeBlock.className = "custom-time-block";
+                                timeBlock.style.cssText = "width: auto;padding: 1px 14px;background: #232a2b;height: 23px;display: flex;justify-content: center;align-items: center;border-radius: 30px;font-family: roboto;font-weight: 800;color: #4dff4d;margin-left: 10px;";
+                                
+                                const timeParagraph = document.createElement("p");
+                                timeParagraph.style.cssText = "display: block;height: auto;padding: 0px;margin: 0px;";
+                                timeParagraph.textContent = `Осталось: ${remainingText}`;
+                                
+                                timeBlock.appendChild(timeParagraph);
+                                
+                                let targetElement = thread.querySelector(".structItem-minor");
+                                if (targetElement) {
+                                    targetElement.appendChild(timeBlock);
+                                } else {
+                                    thread.appendChild(timeBlock);
+                                }
+                            }
+                        });
+                    }
+
+                    processThreads();
+                    setInterval(processThreads, 60000);
+                }
+                  
 
                 // Custom Background for forum.blackrussia.online
                 if (backgroundURLbutton != true) {
@@ -3172,10 +3400,13 @@ browser.storage.local.get(["enableNickName"], (StatusNickName) => {
                     }
 
                     function init() {
-                      if (!document.URL.includes('/threads/')) return;
-
+                    if (!document.URL.includes('/threads/')) return;
                       addButtons();
                     }
+
+
+
+
 
                     function addButtons() {
                       const frElement = document.querySelector('.fr-element');
