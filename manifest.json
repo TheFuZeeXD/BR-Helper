@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BR Helper | Скрипт для Форума",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "Black Russia Helper — это расширение для Google Chrome, разработанное для автоматизации ответов на темы форума forum.blackrussia.online.",
   "permissions": [
     "storage",
